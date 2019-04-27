@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <!-- <text class='iconfont icon-jiantou-zuo icon-left'></text> -->
+  <text>首页</text>
+</view>
+<view class="container">
+  <!-- 轮播图 -->
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+    <block wx:for="{{movies}}" wx:for-index="index" wx:key="*this">
+      <swiper-item>
+        <image src="{{ImgUrl}}{{item.adv_image}}" data-goodsid="{{item.adv_url}}" class="slide-image" mode="aspectFill" bindtap='bindDetails'/>
+      </swiper-item> 
+    </block>  
+  </swiper>  
+  <!-- 公告滚动栏  -->
+  <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
+    <!-- <block wx:for="{{msgList}}"> -->
+        <swiper-item>
+          <view class="swiper_item">公告00000</view>
+        </swiper-item>
+        <swiper-item>
+          <view class="swiper_item">1111</view>
+        </swiper-item>
+        <swiper-item>
+          <view class="swiper_item">2222</view>
+        </swiper-item>
+    <!-- </block> -->
+  </swiper>
+
+  <tabbar tabbar="{{tabbar}}"></tabbar>
+</view>

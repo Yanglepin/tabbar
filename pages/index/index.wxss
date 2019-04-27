@@ -1,0 +1,48 @@
+/**index.wxss**/
+/* 轮播图 */
+.swiper {
+  height: 420rpx;
+  width: 100%;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+.swiper .wx-swiper-dots.wx-swiper-dots-horizontal{
+  margin-bottom: 10rpx;
+}
+.swiper .wx-swiper-dot{
+  display: inline-flex;
+  height: 8rpx;
+  margin-left: 10rpx;
+  justify-content:space-between;
+}
+.swiper .wx-swiper-dot{
+  width:25rpx;
+}
+.swiper .wx-swiper-dot::before{
+  content: '';
+  flex-grow: 1; 
+  background:#8dc9c9;
+  border-radius: 8rpx;
+}
+.swiper .wx-swiper-dot-active{
+  width:35rpx;
+}
+.swiper .wx-swiper-dot-active::before{
+  background:#fff;   
+}
+
+/* 公告滚动栏 */
+.swiper_container {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 100%;
+}
+.swiper_item {
+  font-size: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: 2px;
+}

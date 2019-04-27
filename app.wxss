@@ -1,0 +1,49 @@
+@import "iconfont/iconfont.wxss";
+/**app.wxss**/
+page {
+  background:#f2f2f2;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 80rpx;
+  box-sizing: border-box; 
+} 
+/* 自定义顶部导航栏 */
+.custom{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 80rpx;
+  background: -moz-linear-gradient(top, #34dbfc 0%, #61a7fd 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#34dbfc), color-stop(100%,#61a7fd));
+  background: -webkit-linear-gradient(top, #34dbfc 0%,#61a7fd 100%);
+  background: -o-linear-gradient(top, #34dbfc 0%,#61a7fd 100%);
+  background: -ms-linear-gradient(top, #34dbfc 0%,#61a7fd 100%);
+  background: linear-gradient(to bottom, #34dbfc 0%,#61a7fd 100%);
+  z-index: 999;
+  text-align: center;
+}
+.custom text{
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 500;
+  text-align: center;
+  display: inline-block;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.custom text.icon-left {
+  position: absolute;
+  top: 40rpx;
+  left: 15rpx;
+  font-size: 40rpx;
+}
+.empty_custom{
+  height: 100rpx;
+  width: 100%;
+}
