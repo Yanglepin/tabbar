@@ -1,0 +1,95 @@
+/* pages/yue/yue.wxss */
+page{
+  background-color: #fff;
+}
+.box{
+  width: 90%;
+  height:260rpx;
+  margin-top: 5%;
+  box-shadow: 0px 0px 12px #97eaf9;
+}
+.box .yue{
+  color: #8a8a8a;
+  font-size: 34rpx;
+  padding: 5%;
+}
+.box .box-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.box .money{
+  padding: 0rpx 5% 5% 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.box .money text,.box .box-top text{
+  display: inline-block;
+}
+.box .money text.orange{
+  font-size: 48rpx;
+}
+.box .money text.recharge{
+  color: #fff;
+  font-size: 28rpx;
+  background: -moz-linear-gradient(top, #34dbfc 0%, #61a7fd 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#34dbfc), color-stop(100%,#61a7fd));
+  background: -webkit-linear-gradient(top, #34dbfc 0%,#61a7fd 100%);
+  background: -o-linear-gradient(top, #34dbfc 0%,#61a7fd 100%);
+  background: -ms-linear-gradient(top, #34dbfc 0%,#61a7fd 100%);
+  background: linear-gradient(to bottom, #34dbfc 0%,#61a7fd 100%);
+  width: 140rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 30rpx;
+}
+.box .box-top text.blue{
+  color: #1195db;
+  font-size: 34rpx;
+  padding: 5%;
+}
+
+.member-list{
+  width: 100%;
+  background-color: #fff;
+  margin-top: 8%;
+}
+.member-list .member-list-con{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.member-list .member-list-con{
+  border-bottom: 1px solid #b7b7b7;
+}
+.member-list .member-list-con .left{
+   width: 80%;
+   margin-left: 5%;
+}
+.member-list .member-list-con:first-child .left image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.member-list .member-list-con .left image{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 6%;
+}
+.member-list .member-list-con .left text{
+  display: inline-block;
+  font-size: 30rpx;
+}
+.member-list .member-list-con .right{
+  margin-right: 5%;
+}
+.member-list .member-list-con .right image{
+  width: 25rpx;
+  height: 35rpx;
+}

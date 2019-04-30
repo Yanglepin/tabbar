@@ -1,0 +1,122 @@
+/* pages/member/member.wxss */
+.member-box{
+  width: 84%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5% 8%;
+}
+.member-box .left{
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+}
+.member-box .left .con{
+  display: flex;
+  flex-direction: column;
+  margin-top: 3%;
+  margin-left: 5%;
+  width: 80%;
+}
+.member-box .left icon{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.member-box .left icon image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.member-box .left .con text{
+  display: inline-block;
+}
+.member-box .left .con text.nack-name{
+  color: #000;
+  font-size: 36rpx;
+}
+.member-box .left .con text.desc{
+  color: #000;
+  font-size: 26rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.member-box .right image{
+  width: 25rpx;
+  height: 35rpx;
+}
+
+.member-top{
+  width: 90%;
+  margin: 5%;
+  background-color: #fff;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.member-top .member-top-icon{
+  margin: 5% 0rpx;
+}
+.member-top .member-top-icon image{
+  width: 70rpx;
+  height: 80rpx;
+}
+.member-top .member-top-icon:nth-child(2n) image{
+  width: 70rpx;
+  height: 70rpx;
+}
+.member-top .member-top-icon:last-child image{
+  width: 80rpx;
+  height: 70rpx;
+}
+.member-top .member-top-icon text{
+  display: block;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.member-list{
+  width: 100%;
+  background-color: #fff;
+}
+.member-list .member-list-con{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.member-list .member-list-con:first-child{
+  border-bottom: 1px solid #aeaeae;
+}
+.member-list .member-list-con .left{
+   width: 80%;
+   margin-left: 5%;
+}
+.member-list .member-list-con:first-child .left image{
+  width: 55rpx;
+  height: 55rpx;
+}
+.member-list .member-list-con .left image{
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+  margin-right: 6%;
+}
+.member-list .member-list-con .left text{
+  display: inline-block;
+  font-size: 30rpx;
+}
+.member-list .member-list-con .right{
+  margin-right: 5%;
+}
+.member-list .member-list-con .right image{
+  width: 25rpx;
+  height: 35rpx;
+}

@@ -1,0 +1,55 @@
+/* pages/niudanji/niudanji.wxss */
+.title{
+  width: 92%;
+  color: #9f9f9f;
+  font-size: 32rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.title image{
+  width: 38rpx;
+  height: 50rpx;
+  margin-right: 3%;
+}
+.list-box{
+  width: 90%;
+  background-color: #fff;
+  border-radius: 15rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 3% 0rpx;
+}
+.list-box:nth-child(2n-1){
+  margin: 2% 0rpx;
+}
+.list-box .left{
+  margin-left: 5%;
+}
+.list-box .left image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.list-box .right{
+  margin-left: 3%;
+  width: 75%;
+}
+.list-box .right text{
+  display: inline-block;
+  font-size: 26rpx;
+  line-height: 40rpx;
+}
+.list-box .right view.blue text{
+  height: 50rpx;
+  line-height: 50rpx;
+  display: inline-block;
+}
+.list-box .right view.blue text:first-child{
+  margin-right: 3%;
+}
+.list-box .right text.address{
+  color: #c0c0c0;
+}

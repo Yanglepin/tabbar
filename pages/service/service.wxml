@@ -1,0 +1,37 @@
+<!--pages/service/service.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>   
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <text class='iconfont icon-jiantou-zuo icon-left' bindtap='navigateBack'></text>
+  <text>客户服务</text>
+</view>
+<view class="container">
+  <view class='list-title'>常见问题解答</view>
+  <view class='help'> 
+    <view class='help_item' wx:for="{{ServiceList}}" wx:for-index="index" wx:key="*this">
+      <view class='title' data-index='{{index+1}}' catchtap='panel'>
+        <view class='title_1'>{{index+1}}. {{item.title}}</view>
+        <view class='title_2'>
+          <image src="/icons/{{showIndex == (index+1) ? 'up':'down'}}.png"></image>
+        </view>
+      </view>
+      <view class='detail' wx:if="{{showIndex == (index+1)}}">
+       <template is="wxParse" data="{{wxParseData:askItemsArr[index]}}"/>
+       <!-- <template is="wxParse" data="{{wxParseData:content.nodes}}"/> -->
+      </view>
+    </view>  
+    <!-- <view class='help_item'>
+      <view class='title' data-index='2' catchtap='panel'>
+        <view class='title_1'>1.如何操作洗衣凝珠设备？</view>
+        <view class='title_2'>
+          <image src="/icons/{{showIndex == 2 ? 'up':'down'}}.png"></image>
+        </view>
+      </view>
+      <view class='detail' wx:if="{{showIndex == 2}}">便签小程序是一款免费应用，并承诺永不收费2</view>
+    </view> -->
+  </view>
+
+  <view class='btn'>
+    <text bindtap="bindPhone">客服电话</text>
+  </view>
+
+</view>

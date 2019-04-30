@@ -1,0 +1,66 @@
+/* pages/service/service.wxss */
+page{
+  background-color: #fff;
+}
+.list-title{
+  width: 100%;
+  padding-left: 8%;
+  font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #f2f2f2;
+}
+
+.help {
+  width: 100%;
+  margin: 0 auto;
+}
+.help .help_item {
+  margin: 10rpx auto;
+}
+.help .help_item .title {
+  font-size: 30rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: 1px solid #b7b7b7;
+  display: flex;
+}
+.help .help_item .title .title_1 {
+  width: 630rpx;
+  height: 70rpx;
+  padding-left: 5%;
+  color: #464646;
+}
+.help .help_item .title .title_2 {
+  width: 50rpx;
+  height: 70rpx;
+  text-align: center;
+}
+.help .help_item .title .title_2 image {
+  width: 35rpx;
+  height: 20rpx;
+  margin: 10rpx auto;
+}
+.help .help_item .detail {
+  margin: 10rpx 5%;
+  font-size: 25rpx;
+  line-height: 50rpx;
+  text-indent: 2em;
+  border-bottom: 1px solid #b7b7b7;
+}
+.btn{
+  width: 100%;
+  margin-top: 40%;
+}
+.btn text{
+  width: 70%;
+  height: 90rpx;
+  line-height: 90rpx;
+  display: inline-block;
+  margin: 0rpx 15%;
+  border: 1px solid #36d9fc;
+  color: #36d9fc;
+  font-size: 36rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}

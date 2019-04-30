@@ -1,0 +1,25 @@
+<!--pages/jijin/jijin.wxml-->
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <text class='iconfont icon-jiantou-zuo icon-left'></text>
+  <text>圆梦基金</text>
+</view>
+<view class="container">
+  <view class='top'>
+    <image src='/icons/jijin.png'></image>
+    <view class='box'>
+      <view class='left'>
+        <text>我的基金</text>
+        <text class='blue'>150</text>
+      </view>
+      <view class='right'>
+        <text>总计基金</text>
+        <text class='orange'>50000</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='bottom'>
+    圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍
+  </view>
+
+</view>

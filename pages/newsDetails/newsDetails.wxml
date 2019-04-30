@@ -1,0 +1,12 @@
+<!--pages/newDetails/newsDetails.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>   
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <text class='iconfont icon-jiantou-zuo icon-left' bindtap='navigateBack'></text>
+  <text class='elli1'>{{title}}</text>
+</view>
+<view class="container">
+  <view class='wxParse'>
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+  </view>
+</view>
+   

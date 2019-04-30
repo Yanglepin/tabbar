@@ -8,24 +8,27 @@
   <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
     <block wx:for="{{movies}}" wx:for-index="index" wx:key="*this">
       <swiper-item>
-        <image src="{{ImgUrl}}{{item.adv_image}}" data-goodsid="{{item.adv_url}}" class="slide-image" mode="aspectFill" bindtap='bindDetails'/>
+        <image src="{{ImgUrl}}{{item.image}}" data-topicid="{{item.topic_id}}" class="slide-image" mode="aspectFill" bindtap='bindBannerDetails'/>
       </swiper-item> 
-    </block>  
+    </block>   
   </swiper>  
-  <!-- 公告滚动栏  -->
-  <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
-    <!-- <block wx:for="{{msgList}}"> -->
-        <swiper-item>
-          <view class="swiper_item">公告00000</view>
-        </swiper-item>
-        <swiper-item>
-          <view class="swiper_item">1111</view>
-        </swiper-item>
-        <swiper-item>
-          <view class="swiper_item">2222</view>
-        </swiper-item>
-    <!-- </block> -->
-  </swiper>
-
-  <tabbar tabbar="{{tabbar}}"></tabbar>
+  <!-- 公告滚动栏  --> 
+  <view class='news_list'> 
+    <image src='/icons/news.png' class='news'></image>
+    <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
+      <block wx:for="{{newsList}}" wx:for-index="index" wx:key="*this">
+          <swiper-item data-topicid="{{item.id}}" bindtap='bindNewsListDetails'>
+            <view class="swiper_item elli1">{{item.notice_title}}</view>
+          </swiper-item>  
+      </block>
+    </swiper>
+  </view>
+  <!-- 扭蛋机 --> 
+  <view class='niudanji'>
+    <navigator url='../niudanji/niudanji' hover-class="none">
+     <image src='/icons/niudanji.png'></image>
+    </navigator>
+    <text>扭蛋机</text>
+  </view>
+  <tabbar tabbar="{{tabbar}}"></tabbar> 
 </view>

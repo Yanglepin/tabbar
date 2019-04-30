@@ -9,25 +9,25 @@ Component({
       type: Object,
       value: {
         "backgroundColor": "#ffffff",
-        "color": "#979795",
-        "selectedColor": "#1c1c1b",
+        "color": "#868686",
+        "selectedColor": "#07aefc",
         "list": [
           {
             "pagePath": "/pages/index/index",
-            "iconPath": "icon/icon_home.png",
-            "selectedIconPath": "icon/icon_home_HL.png",
+            "iconPath": "icon/tab1.png",
+            "selectedIconPath": "icon/tab1-blue.png",
             "text": "首页"
           },
           {
             "pagePath": "/pages/middle/middle",
-            "iconPath": "icon/icon_release.png",
+            "iconPath": "icon/tab2.png",
             "isSpecial": true,
-            "text": "发布"
+            "text": "扫一扫"
           },
           {
-            "pagePath": "/pages/mine/mine",
-            "iconPath": "icon/icon_mine.png",
-            "selectedIconPath": "icon/icon_mine_HL.png",
+            "pagePath": "/pages/member/member",
+            "iconPath": "icon/tab3.png",
+            "selectedIconPath": "icon/tab3-blue.png",
             "text": "我的"
           }
         ]
@@ -46,6 +46,22 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
-  }
+    getScan: function () {
+      wx.scanCode({
+        success: (res) => {
+          console.log(res);
+          var orderId = res.result;//商品编号
+          //调用接口  参数1.商品 
+          wx.navigateTo({
+            url: '/pages/pay/pay?orderId=' + orderId
+          })
+        },fail:(res)=>{
+          wx.showToast({
+            title: '失败，请重试！',
+          })
+        }
+      })
+    }
+  },
+  
 })

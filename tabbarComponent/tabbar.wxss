@@ -42,20 +42,20 @@
 }
 .special-wrapper{
   position: absolute;
-  left: 77rpx;
-  top: -36rpx;
+  left: 45rpx;
+  top: -95rpx;
   width: 96rpx;
   height: 96rpx;
   border-radius: 50%;
   border-top: 2rpx solid #f2f2f3;
-  background-color: #fff;
+  /* background-color: #fff; */
   text-align: center;
   box-sizing: border-box;
   padding: 6rpx;
 }
 .special-wrapper .tabbar_icon{
-    width: 84rpx;
-    height: 84rpx;
+    width: 150rpx;
+    height: 150rpx;
 }
 .special-text-wrapper{
   width: 56rpx;

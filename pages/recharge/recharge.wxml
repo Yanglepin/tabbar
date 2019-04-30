@@ -1,0 +1,40 @@
+<!--pages/myInfo/myInfo.wxml-->
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <text class='iconfont icon-jiantou-zuo icon-left' bindtap='navigateBack'></text>
+  <text>账户充值</text>
+</view>
+<view class="container">
+  <view class='top'>
+  <!-- class="{{index == isChecked ? 'act':''}}" -->
+    <text class='title'>请选择充值金额</text>
+    <view class='btn-list clearfix'>
+      <block wx:for="{{select}}" wx:for-index="index" wx:key="*this">
+        <text data-key="{{index}}" bindtap='choose' class="{{isChecked==index ? 'act':''}}">{{item}}</text>
+      </block>
+      
+      <!-- <text bindtap='choose'>20元</text> -->
+      <!-- <text>30元</text>
+      <text>50元</text>
+      <text>100元</text>
+      <text>200元</text> --> 
+    </view>
+  </view>
+  <view class='middle'>
+    <view class='title'>请确认充值账户</view>
+    <view>
+      <text class='blue'>15503793860</text>
+      <text class='username'>用户名</text>
+    </view>
+  </view>
+  <view class='bottom'>
+    <view class='title'>充值后余额为<text class='orange'>156.66</text>元</view>
+    <view class='wechat'>
+      <image src='/icons/wechat.png'></image>
+      <text>微信支付</text>
+    </view>
+  </view>
+
+  <view class='left-btn'>
+    <text class='linercolor'>确认充值</text>
+  </view>
+</view>

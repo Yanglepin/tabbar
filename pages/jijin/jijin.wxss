@@ -1,0 +1,62 @@
+/* pages/jijin/jijin.wxss */
+page{
+  background-color: #cccccc;
+}
+.top{
+  width: 100%;
+  margin-top: 2%;
+  text-align: center;
+  position: relative;
+}
+.top image{
+  width: 90%;
+  height: 320rpx;
+}
+.top .box{
+  position: absolute;
+  background-color: #fff;
+  border-radius: 10rpx;
+  height: 280rpx;
+  width: 85%;
+  left: 7.5%;
+  top: 68%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+}
+.top .box .left,.top .box .right{
+  width: 50%;
+  height: 80%;
+  color: #545454;
+  display: flex;
+  flex-direction: column;
+  margin: 5% 0rpx;
+}
+.top .box .left{
+  border-right: 1px solid #333;
+  box-sizing: border-box;
+}
+.top .box .left text,.top .box .right text{
+  display: block;
+}
+.top .box .left text:first-child,.top .box .right text:first-child{
+  font-size: 26rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-top: 15%;
+}
+.top .box .left text.blue{
+  color: #6cdada;
+  font-size: 36rpx;
+}
+.top .box .right text.orange{
+  font-size: 36rpx;
+}
+.bottom{
+  margin-top: 30%;
+  width: 90%;
+  background-color: #fff;
+  padding: 5%;
+}
+

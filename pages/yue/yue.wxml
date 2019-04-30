@@ -1,0 +1,43 @@
+<!--pages/yue/yue.wxml-->
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <text class='iconfont icon-jiantou-zuo icon-left' bindtap='navigateBack'></text>
+  <text>余额</text>
+</view>
+<view class="container">
+  <view class='box'>
+    <view class='box-top'>
+      <text class='yue'>余额</text>
+      <text class="blue" bindtap='getmingxi'>查看明细</text>
+    </view>
+    <view class='money'>
+      <text class='orange'>166.55元</text>
+      <text class='recharge' bindtap='getRecharge'>充值</text>
+    </view>
+  </view>
+ 
+  <view class='member-list'>
+
+    <!-- <view class='member-list-con'>
+      <view class='left'>
+        <image src='/icons/yue1.png'></image>
+        <text>优惠券</text>
+      </view>
+      <view class='right'>
+        <image src='/icons/right-arrow.png'></image>
+      </view>
+    </view>
+    <view class='member-list-con'>
+      <view class='left'>
+        <image src='/icons/yue2.png'></image>
+        <text>优惠券</text>
+      </view>
+      <view class='right'>
+        <image src='/icons/right-arrow.png'></image>
+      </view>
+    </view> -->
+
+  </view>
+
+
+
+</view>

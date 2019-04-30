@@ -1,0 +1,41 @@
+/* pages/historyOrder/historyOrder.wxss */
+page{
+  background-color: #fff;
+}
+.list-title{
+  width: 100%;
+  padding-left: 8%;
+  font-size: 32rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #f2f2f2;
+  color: #666;
+}
+.list{
+  width: 100%;
+  background-color: #fafafa;
+  color: #999;
+  font-size: 28rpx;
+  margin-top: 3%;
+  padding: 3% 0rpx;
+}
+.list .top{
+  font-size: 30rpx;
+}
+.list .top,.list .bottom{
+  height: 50rpx;
+  line-height: 50rpx;
+  padding-left: 3.5%;
+}
+.list .bottom{
+  display: flex;
+  flex-direction: row;
+  font-size: 24rpx;
+}
+.list .bottom view{
+  width: 50%;
+}
+.list .bottom view text.orange{
+  font-size: 28rpx;
+  margin-left: 5%;
+}

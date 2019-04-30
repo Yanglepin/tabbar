@@ -1,0 +1,71 @@
+<!--pages/pay/pay.wxml-->
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <text class='iconfont icon-jiantou-zuo icon-left'></text>
+  <text>购买凝珠</text>
+</view>
+<view class="container">
+  <view class='top'>
+    <view class='left'>
+      <image src='/icons/tou1.png'></image>
+    </view>
+    <view class='right'>
+      <view>商品名称：洗衣凝珠</view>
+      <view>商品单价：
+        <text class='orange'>￥5</text>
+      </view>
+      <view class='clearfix'>
+        <view class='num-tit'>购买数量 :</view>
+        <view class='num clearfix'> 
+          <text>-</text>
+          <input type='number' value='1'/>
+          <text>+</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='member-list'>
+    <radio-group bindchange="radioChange">
+      <view class='member-list-con'>
+        <view class='left'>
+          <image src='/icons/qianbao.png'></image>
+          <text>钱包支付</text>
+        </view>
+        <view class='right'>
+          <text class='orange'> 当前余额：￥55.65</text>
+          <label>
+              <radio value="1"></radio>
+          </label>   
+        </view>
+      </view>
+      <view class='member-list-con'>
+        <view class='left'>
+          <image src='/icons/wechat.png'></image>
+          <text>微信支付</text>
+        </view>
+        <view class='right'>
+          <label>
+              <radio value="2" checked></radio>
+          </label>   
+        </view>
+      </view>
+    </radio-group>
+
+    <view class='member-list-con' style='margin-top: 10%;'>
+      <view class='left'>
+        <text>共2件，合计：</text>
+      </view>
+      <view class='right'>
+        <text class='orange'> ￥：55.00</text>
+      </view>
+    </view>
+
+  </view>
+
+  <view class='btn'>
+    <text>立即支付</text>
+  </view>
+
+    <tabbar tabbar="{{tabbar}}"></tabbar> 
+
+</view>

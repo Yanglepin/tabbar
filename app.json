@@ -1,29 +1,50 @@
 {
   "pages": [
+    
     "pages/index/index",
+    "pages/mingxi/mingxi",
+    "pages/pay/pay",
+    "pages/recharge/recharge",
+    "pages/service/service",
+    "pages/niudanji/niudanji",
+    "pages/yue/yue",
+    "pages/paySuccess/paySuccess",
+    "pages/jijin/jijin",
+    "pages/aboutUs/aboutUs",
+    "pages/historyOrder/historyOrder",
+    "pages/member/member",
+    "pages/result/result",
+    "pages/myInfo/myInfo", 
     "pages/middle/middle",
-    "pages/mine/mine"
+    "pages/newsDetails/newsDetails",
+    "pages/bannerDetails/bannerDetails"
   ],
-  "window": { 
+  "window": {
     "navigationBarTitleText": "tabBar",
-    "navigationStyle":"custom"
+    "navigationStyle": "custom"
   },
   "tabBar": {
     "backgroundColor": "#ffffff",
-    "color": "#979795",
-    "selectedColor": "#1c1c1b",
+    "color": "#868686",
+    "selectedColor": "#07aefc",
     "list": [
       {
-      "pagePath": "pages/index/index",
-      "text": "首页",
-      "iconPath": "tabbarComponent/icon/icon_home.png",
-      "selectedIconPath": "tabbarComponent/icon/icon_home_HL.png"
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "tabbarComponent/icon/tab1.png",
+        "selectedIconPath": "tabbarComponent/icon/tab1-blue.png"
       },
       {
-        "pagePath": "pages/mine/mine",
+        "pagePath": "pages/middle/middle",
+        "iconPath": "tabbarComponent/icon/tab2.png",
+        "isSpecial": true,
+        "text": "扫一扫"
+      },
+      {
+        "pagePath": "pages/member/member",
         "text": "我的",
-        "iconPath": "tabbarComponent/icon/icon_mine.png",
-        "selectedIconPath": "tabbarComponent/icon/icon_mine_HL.png"
+        "iconPath": "tabbarComponent/icon/tab3.png",
+        "selectedIconPath": "tabbarComponent/icon/tab3-blue.png"
       }
     ]
   }

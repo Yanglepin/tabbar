@@ -1,0 +1,18 @@
+<!--pages/paySuccess/paySuccess.wxml-->
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <text class='iconfont icon-jiantou-zuo icon-left'></text>
+  <text>支付结果</text>
+</view>
+<view class="container">
+  <view class='top'><image src='/icons/wechat1.png'></image>支付成功</view>
+  <view class='list'>
+    <view class='tit'>订单信息</view>
+    <view class='gray'>订单创建时间  2019年3月25日 11:30</view>
+    <view class='gray'>设备位置   黄河科技大学7号楼1楼</view>
+    <view class='gray'>订单金额 <text class='orange'>55.00</text></view>
+  </view>
+  <view class='bottom'>
+    <view>订单编号  BH01111123456</view>
+    <view>设备编号 BH01111123456</view>
+  </view>
+</view>

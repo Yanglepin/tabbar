@@ -1,0 +1,105 @@
+/* pages/recharge/recharge.wxss */
+.top,.middle,.bottom{
+  width: 98%;
+  border-bottom: 1px solid #b8b8b8;
+  margin: 0 1%;
+}
+.top text.title{
+  display: inline-block;
+  width: 90%;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #949494;
+  font-size: 32rpx;
+  margin-left: 3.5%;
+}
+.top .btn-list{
+  width: 92%;
+  margin: 0rpx 4%;
+
+}
+.top .btn-list text.act{
+  background-color:#50bbfd;
+  box-shadow: 2px 2px 12px #b8b8b8;
+}
+.top .btn-list text{
+  display: inline-block;
+  float: left;
+  width: 30%;
+  height: 110rpx;
+  line-height: 110rpx;
+  color: #fff;
+  font-size: 36rpx;
+  text-align: center;
+  background-color:#b8b8b8;
+  margin-bottom: 5%;
+  border-radius: 10rpx;
+}
+.top .btn-list text:nth-child(3n-1){
+  margin: 0 5%;
+}
+.middle view.title{
+  color: #010101;
+  font-size: 30rpx;
+  margin-left: 3.5%;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.middle view{
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.middle .blue{
+  display: inline-block;
+  color: #50bbfd;
+  font-size: 42rpx;
+  margin-left: 3.5%;
+}
+.middle .username{
+  display: inline-block;
+  color: #8c8c8c;
+  font-size: 26rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-left: 3.5%;
+}
+
+.bottom view.title{
+  color: #8c8c8c;
+  font-size: 30rpx;
+  margin-left: 3.5%;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.bottom .wechat{
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-left: 3.5%;
+}
+.bottom .wechat image{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+.bottom .wechat text{
+  color: #8c8c8c;
+  font-size: 30rpx;
+  margin-left: 3%;
+}
+.middle,.bottom{
+  padding: 3% 0rpx;
+}
+.left-btn{
+  width: 100%;
+  text-align: center;
+  margin-top: 20%;
+}
+.left-btn text{
+  display: inline-block;
+  width: 80%;
+  font-size: 32rpx;
+  color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 80rpx;
+}

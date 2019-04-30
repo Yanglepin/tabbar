@@ -1,0 +1,76 @@
+<!--pages/member/member.wxml-->
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <text>个人中心</text>
+</view>
+<view class="container">
+
+  <view class='member-box' bindtap='getMyinfo'>
+    <view class='left'>
+      <!-- <icon><image src='/icons/banner.png'></image></icon> -->
+        <icon><open-data type="userAvatarUrl"></open-data></icon>
+      <view class="con">
+        <!-- <text class="nick-name elli1">昵称</text> -->
+        <text class="nick-name elli1"><open-data type="userNickName" lang="zh_CN"></open-data></text>
+        <text class='desc elli1'>暂无描述</text>
+      </view>
+    </view>
+    <view class='right'>
+      <image src='/icons/right-arrow.png'></image>
+    </view>
+  </view> 
+
+  <view class='member-top'>
+    <view class='member-top-icon'>
+      <navigator url='../yue/yue' hover-class='none'>
+        <image src='/icons/icon1.png'></image> 
+        <text class='blue'>钱包</text>
+      </navigator>
+    </view>
+    <view class='member-top-icon'>
+      <navigator url='../historyOrder/historyOrder' hover-class='none'>
+        <image src='/icons/icon2.png'></image> 
+        <text class='blue'>订单</text>
+      </navigator>
+    </view>
+    <view class='member-top-icon' bindtap='bindPhone'>
+        <image src='/icons/icon3.png'></image>
+        <text class='blue'>客服</text>
+    </view>
+  </view>
+
+  <view class='member-list'>
+
+    <!-- <view class='member-list-con'>
+      <view class='left'>
+        <image src='/icons/icon4.png'></image>
+        <text>收到的消息</text>
+      </view>
+      <view class='right'>
+        <image src='/icons/right-arrow.png'></image>
+      </view>
+    </view> -->
+    <navigator url='../aboutUs/aboutUs' hover-class='none'>
+      <view class='member-list-con'>
+        <view class='left'>
+          <image src='/icons/icon5.png'></image>
+          <text>关于我们</text>
+        </view>
+        <view class='right'>
+          <image src='/icons/right-arrow.png'></image>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='../service/service' hover-class='none'>
+      <view class='member-list-con'>
+        <view class='left'>
+          <image src='/icons/icon6.png'></image>
+          <text>给我们些建议吧</text>
+        </view>
+        <view class='right'>
+          <image src='/icons/right-arrow.png'></image>
+        </view>
+      </view>
+    </navigator>
+    <tabbar tabbar="{{tabbar}}"></tabbar>
+  </view>
+</view>

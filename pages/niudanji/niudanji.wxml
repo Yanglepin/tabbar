@@ -1,0 +1,53 @@
+<!--pages/niudanji/niudanji.wxml-->
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <text class='iconfont icon-jiantou-zuo icon-left' bindtap='navigateBack'></text>
+  <text>扭蛋机</text>
+</view>
+<view class="container">
+  <view class='title'><image src='/icons/point.png'></image>{{address}}</view>
+  <block wx:for="{{niudanji}}" wx:for-index="index" wx:key="*this">
+    <view class='list-box'>
+      <view class='left'>
+        <image src='/icons/shebei.png'></image>
+      </view>
+      <view class='right'> 
+        <text class='name'>{{item.goods_name}}</text> 
+        <view class='blue elli1'>
+          <text wx:if="{{item.min_buy==0}}">正常售卖</text>
+          <text class='orange' wx:if="{{item.min_buy==1}}">已售罄</text>
+          <!-- <text wx:if="{{item.min_buy==2}}">故障</text> -->
+          <text>距此{{item.juli}}m</text>  
+        </view>
+        <text class='address elli1'>{{item.address}}</text>
+      </view>
+    </view>
+  </block> 
+<!-- 
+   <view class='list-box'>
+    <view class='left'>
+      <image src='/icons/shebei.png'></image>
+    </view>
+    <view class='right'>
+      <text class='name'>编号#0001号凝珠机</text>
+      <view class='blue elli1'>
+        <text class='orange'>已售罄</text>
+        <text>距此999m</text>
+      </view>
+      <text class='address elli1'>黄河科技大学9号楼1楼</text>
+    </view>
+  </view>
+
+   <view class='list-box'>
+    <view class='left'>
+      <image src='/icons/shebei.png'></image>
+    </view>
+    <view class='right'>
+      <text class='name'>编号#0001号凝珠机</text>
+      <view class='blue elli1'>
+        <text>正常售卖</text>
+        <text>距此999m</text>
+      </view>
+      <text class='address elli1'>黄河科技大学9号楼1楼</text>
+    </view>
+  </view> -->
+</view>

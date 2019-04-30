@@ -1,0 +1,17 @@
+<!--pages/aboutUs/aboutUs.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>   
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <text class='iconfont icon-jiantou-zuo icon-left' bindtap='navigateBack'></text>
+  <text>关于我们</text>
+</view>
+<view class="container">
+  <!-- <view class='content'>
+    <image src='/icons/about_us.png'></image>
+    <view class='title'>仟雨佰林科技有限公司</view>
+  </view> -->
+  <!-- <view class='tit'>公司介绍</view> -->
+  <view class='intro wxParse'>
+      <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+  </view>
+</view> 
+  

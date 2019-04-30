@@ -1,0 +1,43 @@
+<!--pages/historyOrder/historyOrder.wxml-->
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <text class='iconfont icon-jiantou-zuo icon-left' bindtap='navigateBack'></text>
+  <text>历史订单</text>
+</view>
+<view class="container">
+  <view class='list-title'>全部订单</view>
+  <view class='list'> 
+    <view class='top'>订单日期   2019年3月19日 16:55</view>
+    <view class='bottom'>
+      <view>商品数量<text>2</text></view>
+      <view>订单金额<text class='orange'>5000</text></view>
+    </view>
+    <view class='bottom'>
+      <view class='elli1'>订单编号：BH01111123456</view>
+      <view class='elli1'>设备编号：#BH00102</view>
+    </view>
+  </view>
+
+  <view class='list'>
+    <view class='top'>订单日期  2019年3月19日 16:55</view>
+    <view class='bottom'>
+      <view>商品数量<text>2</text></view>
+      <view>订单金额<text class='orange'>5000</text></view>
+    </view>
+    <view class='bottom'>
+      <view class='elli1'>订单编号：BH01111123456</view>
+      <view class='elli1'>设备编号：#BH00102</view>
+    </view>
+  </view>
+
+  <view class='list'>
+    <view class='top'>订单日期  2019年3月19日 16:55</view>
+    <view class='bottom'>
+      <view>商品数量<text>2</text></view>
+      <view>订单金额<text class='orange'>5000</text></view>
+    </view>
+    <view class='bottom'>
+      <view class='elli1'>订单编号：BH01111123456</view>
+      <view class='elli1'>设备编号：#BH00102</view>
+    </view>
+  </view>
+</view>

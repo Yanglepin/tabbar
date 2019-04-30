@@ -1,0 +1,80 @@
+<!--pages/mingxi/mingxi.wxml-->
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <text class='iconfont icon-jiantou-zuo icon-left' bindtap='navigateBack'></text>
+  <text>账单明细</text>
+</view>
+<view class="container">
+  <view class='top'>
+    <view class='list-msg2' bindtap='bindShowMsg'>
+      <text>{{tihuoWay}}</text>
+      <image src='/icons/upup.png'></image>
+    </view>
+    <view class="select_box" wx:if="{{select}}">
+      <view class="select_one" bindtap="mySelect" data-name="全部交易类型">全部交易类型</view>
+      <view class="select_one" bindtap="mySelect" data-name="消费">消费</view>
+      <view class="select_one" bindtap="mySelect" data-name="充值">充值</view>
+    </view>
+  </view>
+
+  <!-- 时间控件 -->
+  <view class='middle'>
+    <view class='left'>
+      <!-- <view>2019年3月<image src='/icons/down.png' style='width:30rpx;height:18rpx;margin-left:3%;'></image></view> -->
+      <picker mode="date" fields="month" value="{{date}}" start="2019-05" end="2100-12" bindchange="getDateTime">
+        <view class="selectDate">
+          {{date}}
+          <image src='/icons/down.png' style='width:30rpx;height:18rpx;margin-left:3%;'></image>
+        </view>
+      </picker>
+      <view>共消费
+        <text class='orange'>￥55.66</text>
+      </view>
+    </view>
+    <view class='right'>
+      <view style='font-size:26rpx;'>当前余额
+        <text class='orange'>￥55.66</text>
+      </view>
+      <view style='color: #a1a1a1;'>|
+        <text class='blue'>去充值</text>
+        <image src='/icons/right-arrow.png' style='width:20rpx;height:25rpx;margin-left:3%;'></image>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='list-con'>
+
+    <view class='select-list'>
+      <view class='left'>
+        <text class='black'>类型 凝珠设备消费</text>
+        <text>2019年2月15日 16.55</text>
+      </view>
+      <view class='right'>
+        <text class='black'>-55.00</text>
+        <text>余额 ￥155.66</text>
+      </view>
+    </view>
+    <view class='select-list'>
+      <view class='left'>
+        <text class='black'>类型 凝珠设备消费</text>
+        <text>2019年2月15日 16.55</text>
+      </view>
+      <view class='right'>
+        <text class='black'>-55.00</text>
+        <text>余额 ￥155.66</text>
+      </view>
+    </view>
+    <view class='select-list'>
+      <view class='left'>
+        <text class='black'>类型 凝珠设备消费</text>
+        <text>2019年2月15日 16.55</text>
+      </view>
+      <view class='right'>
+        <text class='black'>-55.00</text>
+        <text>余额 ￥155.66</text>
+      </view>
+    </view>
+
+  </view>
+
+</view>

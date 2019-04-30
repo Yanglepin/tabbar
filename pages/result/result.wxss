@@ -1,0 +1,35 @@
+/* pages/result/result.wxss */
+.con{
+  width: 100%;
+  text-align: center;
+  font-size: 32rpx;
+}
+.con image{
+  display: inline-block;
+  width: 180rpx;
+  height: 180rpx;
+  margin-top: 20%;
+}
+.blue{
+  color: #0099ff;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.yue{
+  color: #939393;
+   font-size: 30rpx;
+}
+.left-btn{
+  width: 100%;
+  text-align: center;
+  margin-top: 50%;
+}
+.left-btn text{
+  display: inline-block;
+  width: 90%;
+  font-size: 32rpx;
+  color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
