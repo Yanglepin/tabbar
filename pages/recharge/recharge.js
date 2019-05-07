@@ -9,21 +9,95 @@ Page({
     ImgUrl: app.data.URL,
     statusBarHeight: app.globalData.statusBarHeight,
     isChecked: 0,//判断是否选中
-    select: ["10元", "20元", "30元","50元"]
+    select: ["10元", "20元", "30元","50元"],
+    nick_name: '',
+    money:0.01
   },
 
   /** 
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.personalData();
   },
   choose: function (e) {
     var that = this;
     that.setData({
-      isChecked: e.currentTarget.dataset.key
+      isChecked: e.currentTarget.dataset.key,
+      money: e.currentTarget.dataset.value
     })
   }, 
+  //个人资料
+  personalData: function () {
+    let that = this;
+    wx.request({
+      url: that.data.ImgUrl + 'index.php?s=/api/member/personalData',
+      data: {
+        token: app.globalData.openId
+      },
+      method: 'POST',
+      success: function (res) {
+        // console.log("个人资料" + JSON.stringify(res.data));
+        that.setData({
+          nick_name: res.data.nick_name
+        })
+      }
+    })
+  },
+  //充值
+  reCharge: function () {
+    let that = this;
+    console.log(app.globalData.openId + "-----" + that.data.money + "-----" + that.data.nick_name);
+    wx.request({
+      url: that.data.ImgUrl + 'index.php?s=/api/order/chzhiCreate',
+      data: {
+        token: app.globalData.openId,
+        money: that.data.money,
+        user_name: that.data.nick_name,
+        pay_type: 1
+      },
+      method: 'POST',
+      success: function (res) {
+       console.log(res.data); 
+        if (res.data.code){
+          wx.request({
+            url: that.data.ImgUrl + 'index.php?s=/api/pay/getPayValue',
+            data: {
+              openid: app.globalData.openId,
+              out_trade_no: res.data.code
+            },
+            method: 'POST',
+            success: function (res) {
+              console.log(res);
+              wx.requestPayment({
+                'timeStamp': String(res.data.timeStamp),
+                'nonceStr': res.data.nonceStr,
+                'package': res.data.package,
+                'signType': 'MD5',
+                'paySign': res.data.paySign,
+                'success': function (res) {
+                  console.log(res);
+                  setTimeout(function () {
+                    wx.navigateTo({
+                      url: '../mingxi/mingxi',
+                    })
+                  }, 800);
+                },
+                'fail': function (res) {
+                  console.log(res);
+                }
+              })
+            }
+          })
+        }else{
+          wx.showToast({
+            title: '创建订单失败！',
+          })
+        }
+       
+      }
+    })
+  },
   navigateBack: function () {
     var self = this;
     var pages = getCurrentPages();

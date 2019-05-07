@@ -2,30 +2,62 @@
 App({
   data:{
     URL: "https://ndj.xieenguoji.com/", 
+    // token: '',
   },
   onLaunch: function () {
     //隐藏系统tabbar
     wx.hideTabBar();
     //获取设备信息
     this.getSystemInfo();
-
     // 登录
-    wx.login({
-      success: res => {
-        // console.log(res);
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+    wx.login({ 
+      success: res => { 
+        let that =this;
+        // console.log("code:" + JSON.stringify(res));
+        if (!that.globalData.openid){
+          wx.request({
+            url: that.data.URL + 'index.php?s=/api/login/getOpenIdByXiaoChengXuInCode',
+            method: 'POST', 
+            data: {
+              code: res.code 
+            },
+            success: function (res) {  
+              console.log("获取openid：" + res.data.openid);
+              that.globalData.openId = res.data.openid;
+              if (that.globalData.userInfo==null){
+                var haderImg = 'https://ndj.xieenguoji.com/upload/goods_qrcode/goods_qrcode_27.png';
+              }else{
+                var haderImg = that.globalData.userInfo.avatarUrl;
+              }
+              console.log(that.globalData.userInfo); 
+              wx.request({ 
+                url: that.data.URL + 'index.php?s=/api/login/loginByOpenId',
+                method: 'POST', 
+                data: {
+                  openId: that.globalData.openId,
+                  haderImg: haderImg
+                },
+                success: function (res) { 
+                  that.globalData.token = res.data.token;
+                  console.log("获取token:" + that.globalData.token);
+                }
+              }) 
+            }
+          })
+        }
       }
     })
-    // 获取用户信息
-    wx.getSetting({
+   
+    // 获取用户信息 
+    wx.getSetting({ 
       success: res => {
-        console.log(res);
-        if (res.authSetting['scope.userLocation']) {
+        if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
-            success: res => { 
+            success: res => {
               // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
+              this.globalData.userInfo = res.userInfo;
+              // console.log("获取用户信息：" + JSON.stringify(res.userInfo));
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
@@ -33,13 +65,23 @@ App({
               }
             }
           })
-        }
+        }else{
+          // wx.openSetting({  
+          //   success: (res) => {
+          //    console.log("引导授权："+res);
+          //   }
+          // })      
+        }  
       }
     })
+   
   },
-  onShow: function () {
+   
+  onShow: function () { 
+    let that = this;
     //隐藏系统tabbar 
     wx.hideTabBar();
+   
   },
   getSystemInfo: function () {
     let t = this;
@@ -68,6 +110,8 @@ App({
   globalData: {
     systemInfo: null,//客户端设备信息
     userInfo: null,
+    openId: "",
+    token:"",
     statusBarHeight: wx.getSystemInfoSync()['statusBarHeight'],
     tabBar: {
       "backgroundColor": "#ffffff",

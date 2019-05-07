@@ -44,6 +44,7 @@
   width: 100rpx;
   height: 100rpx;
   margin-top: 3%;
+  border-radius: 20rpx;
 }
 .info-list .con icon.right-arrow image{
   position: absolute;

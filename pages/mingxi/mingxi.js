@@ -10,7 +10,8 @@ Page({
     statusBarHeight: app.globalData.statusBarHeight,
     select: false,
     tihuoWay: '全部交易类型',
-    date: new Date().getFullYear() + "-" + ((new Date().getMonth() + 1) < 10 ? ("0" + (new Date().getMonth() + 1)) : (new Date().getMonth() + 1))
+    date: new Date().getFullYear() + "-" + ((new Date().getMonth() + 1) < 10 ? ("0" + (new Date().getMonth() + 1)) : (new Date().getMonth() + 1)),
+    val: 0 
   },
 
   /** 
@@ -18,6 +19,12 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+  //充值
+  getRecharge: function (e) {
+    wx.navigateTo({
+      url: '../recharge/recharge'//充值
+    })
   },
   getDateTime:function(e) {
     console.log(e);
@@ -34,10 +41,12 @@ Page({
     })
   },
   mySelect(e) {
-    var name = e.currentTarget.dataset.name
+    var name = e.currentTarget.dataset.name;
+    var value = e.currentTarget.dataset.value;
     this.setData({
       tihuoWay: name,
-      select: false
+      select: false, 
+      val: value
     })
   },
   bindDateChange(e) {

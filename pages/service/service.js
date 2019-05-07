@@ -51,18 +51,7 @@ Page({
       },
       method: 'POST',
       success: function (res) { 
-        console.log("获列表" + JSON.stringify(res.data.data));
-        // for(var i = 0; i < res.data.data.length; i++){
-        //   var list = res.data.data[i].content;
-        //   if (list != "") {
-        //     // var list = list.replace(new RegExp("/upload", "g"), that.data.ImgUrl + "upload");
-        //     WxParse.wxParse('content', 'html', list, that, 5);
-        //     // console.log("图书简介:" + JSON.stringify(list));
-        //   }else{
-        //     WxParse.wxParse('content', 'html', list, that, 5);
-        //   }
-        //   console.log(list);
-        // }
+        // console.log("获列表" + JSON.stringify(res.data.data));
         var _data = res.data.data;
         var _len = _data.length;
         for (var i = 0; i < _len; i++) {

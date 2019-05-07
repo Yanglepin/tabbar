@@ -72,10 +72,16 @@ text.black{
   background-color: #ebebeb;
   height: 180rpx;
 }
-.middle .left,.middle .right{
+.middle .left{
+  font-size: 30rpx;
+  width: 60%;
+}
+.middle .left .selectData{
   color: #464646;
+}
+.middle .right{
   font-size: 32rpx;
-  width: 50%;
+  width: 40%;
 }
 .middle .left{
   margin-left: 5%;
@@ -87,6 +93,10 @@ text.black{
 .middle .left view,.middle .right view{
   height: 60rpx;
   line-height: 60rpx;
+  color: #5d5d5d;
+}
+.middle .left view text{
+  margin: 0 5% 0 2%;
 }
 text.orange{
   font-size: 32rpx;
@@ -97,4 +107,7 @@ text.blue{
 }
 picker{
   width: 100%;
+}
+.hidden{
+  display: none;
 }

@@ -1,6 +1,5 @@
 {
   "pages": [
-    
     "pages/index/index",
     "pages/mingxi/mingxi",
     "pages/pay/pay",
@@ -14,7 +13,7 @@
     "pages/historyOrder/historyOrder",
     "pages/member/member",
     "pages/result/result",
-    "pages/myInfo/myInfo", 
+    "pages/myInfo/myInfo",
     "pages/middle/middle",
     "pages/newsDetails/newsDetails",
     "pages/bannerDetails/bannerDetails"
@@ -47,5 +46,6 @@
         "selectedIconPath": "tabbarComponent/icon/tab3-blue.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

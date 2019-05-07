@@ -25,16 +25,16 @@
       <view class='right'>
         <image src='/icons/right-arrow.png'></image>
       </view>
-    </view>
-    <view class='member-list-con'>
+    </view> -->
+    <view class='member-list-con' bindtap='getJijin'>
       <view class='left'>
         <image src='/icons/yue2.png'></image>
-        <text>优惠券</text>
+        <text>圆梦基金</text>
       </view>
       <view class='right'>
         <image src='/icons/right-arrow.png'></image>
       </view>
-    </view> -->
+    </view>
 
   </view>
 

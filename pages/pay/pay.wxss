@@ -18,7 +18,9 @@ page{
 .top .left image{
   width: 210rpx;
   height: 160rpx;
-  border-radius: 10rpx;
+  border-radius: 20rpx;
+  border: 6px solid #cccccc;
+  box-sizing: border-box;
 }
 .top .right{
   font-size: 30rpx;
@@ -105,7 +107,7 @@ page{
   line-height: 80rpx;
   text-align: center;
   margin-left: 5%;
-  margin-top: 50%;
+  margin-top: 25%;
   border-radius: 40rpx;
 }
 radio-group{

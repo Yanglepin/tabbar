@@ -7,12 +7,21 @@ Page({
   data: {
     ImgUrl: app.data.URL,
     statusBarHeight: app.globalData.statusBarHeight,
+    info: {},
+    img: '',
+    nick_name: '',//昵称
   },
-  /** 
+  /**  
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    app.editTabbar();
+    wx.hideTabBar();
+    app.editTabbar(); 
+    // console.log("获取token:" + app.globalData.token);
+    this.personalData();
+  },
+  onShow(){
+    this.personalData();
   },
   //拨打电话 
   bindPhone: function () {
@@ -26,9 +35,37 @@ Page({
       }
     })
   },
-  getMyinfo:function(){
+  /**
+ * 获取用户信息
+ */
+  bingGetUserInfo: function (e) {
+    console.log(e.detail);
+    var nickName = e.detail.userInfo.nickName;
+    var avatarUrl = e.detail.userInfo.avatarUrl;
+    // console.log(nickName);
+    // console.log(avatarUrl);
     wx.navigateTo({
-      url: '../myInfo/myInfo'
+      url: '../myInfo/myInfo?nickName=' + nickName + '&&avatarUrl=' + avatarUrl
+    })
+  },
+  //个人资料
+  personalData: function () {
+    let that = this;
+    console.log(app.globalData.token);
+    wx.request({
+      url: that.data.ImgUrl + 'index.php?s=/api/member/personalData',
+      data: {
+        token: app.globalData.openId
+      },
+      method: 'POST',
+      success: function (res) {
+        // console.log("个人资料" + JSON.stringify(res.data));
+        that.setData({
+          info: res.data,
+          img: res.data.user_headimg,
+          nick_name: res.data.nick_name
+        })
+      }
     })
   },
   /**

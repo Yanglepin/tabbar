@@ -11,7 +11,7 @@
         <image src="{{ImgUrl}}{{item.image}}" data-topicid="{{item.topic_id}}" class="slide-image" mode="aspectFill" bindtap='bindBannerDetails'/>
       </swiper-item> 
     </block>   
-  </swiper>  
+  </swiper>   
   <!-- 公告滚动栏  --> 
   <view class='news_list'> 
     <image src='/icons/news.png' class='news'></image>
@@ -29,6 +29,7 @@
      <image src='/icons/niudanji.png'></image>
     </navigator>
     <text>扭蛋机</text>
+   
   </view>
   <tabbar tabbar="{{tabbar}}"></tabbar> 
 </view>

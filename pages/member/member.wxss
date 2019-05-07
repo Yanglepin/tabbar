@@ -30,6 +30,10 @@
   height: 120rpx;
   border-radius: 50%;
 }
+.member-box .left icon image.img{
+  width: 100rpx;
+  height: 100rpx; 
+}
 .member-box .left .con text{
   display: inline-block;
 }
@@ -119,4 +123,13 @@
 .member-list .member-list-con .right image{
   width: 25rpx;
   height: 35rpx;
+}
+.button-hover{
+  background-color: #f2f2f2;
+}
+button::after{
+  border: none; 
+}
+button{
+    background-color: #f2f2f2;
 }

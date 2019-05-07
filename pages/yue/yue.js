@@ -22,9 +22,16 @@ Page({
       url: '../recharge/recharge'//充值
     })
   },
+  //查看明细
   getmingxi: function (e) {
     wx.navigateTo({
       url: '../mingxi/mingxi'//明细
+    })
+  },
+  //圆梦基金
+  getJijin:function(e){
+    wx.navigateTo({
+      url: '../jijin/jijin'//圆梦基金
     })
   },
   navigateBack: function () {
@@ -37,11 +44,6 @@ Page({
             + '&circleName=' + (self.data.circleName || '')
         });
       }
-      // else {
-      //   wx.switchTab({
-      //     url: "../viewList/viewList"
-      //   });
-      // }
     } else {
       wx.navigateBack({ changed: true });//返回上一页  
     }

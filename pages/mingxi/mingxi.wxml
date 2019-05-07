@@ -10,14 +10,15 @@
       <image src='/icons/upup.png'></image>
     </view>
     <view class="select_box" wx:if="{{select}}">
-      <view class="select_one" bindtap="mySelect" data-name="全部交易类型">全部交易类型</view>
-      <view class="select_one" bindtap="mySelect" data-name="消费">消费</view>
-      <view class="select_one" bindtap="mySelect" data-name="充值">充值</view>
+      <view class="select_one" bindtap="mySelect" data-name="全部交易类型" data-value="0">全部交易类型</view>
+      <view class="select_one" bindtap="mySelect" data-name="消费" data-value="1">消费</view>
+      <view class="select_one" bindtap="mySelect" data-name="充值" data-value="2">充值</view>
     </view>
   </view>
 
   <!-- 时间控件 -->
-  <view class='middle'>
+  <!-- 消费 -->
+  <view class='middle' wx:if="{{val==1}}">
     <view class='left'>
       <!-- <view>2019年3月<image src='/icons/down.png' style='width:30rpx;height:18rpx;margin-left:3%;'></image></view> -->
       <picker mode="date" fields="month" value="{{date}}" start="2019-05" end="2100-12" bindchange="getDateTime">
@@ -35,15 +36,62 @@
         <text class='orange'>￥55.66</text>
       </view>
       <view style='color: #a1a1a1;'>|
-        <text class='blue'>去充值</text>
+        <text class='blue' bindtap='getRecharge'>去充值</text>
+        <image src='/icons/right-arrow.png' style='width:20rpx;height:25rpx;margin-left:3%;'></image>
+      </view>
+    </view>
+  </view>
+ <!-- 充值 -->
+  <view class='middle' wx:if="{{val==2}}">
+    <view class='left'>
+      <!-- <view>2019年3月<image src='/icons/down.png' style='width:30rpx;height:18rpx;margin-left:3%;'></image></view> -->
+      <picker mode="date" fields="month" value="{{date}}" start="2019-05" end="2100-12" bindchange="getDateTime">
+        <view class="selectDate">
+          {{date}}
+          <image src='/icons/down.png' style='width:30rpx;height:18rpx;margin-left:3%;'></image>
+        </view>
+      </picker>
+      <view>共充值
+        <text class='orange'>￥55.66</text>
+      </view>
+    </view>
+    <view class='right'>
+      <view style='font-size:26rpx;'>当前余额
+        <text class='orange'>￥55.66</text>
+      </view>
+      <view style='color: #a1a1a1;'>|
+        <text class='blue' bindtap='getRecharge'>去充值</text>
+        <image src='/icons/right-arrow.png' style='width:20rpx;height:25rpx;margin-left:3%;'></image>
+      </view>
+    </view>
+  </view>
+  <!-- 全部交易类型 -->
+  <view class='middle' wx:if="{{val==0}}">
+    <view class='left'>
+      <!-- <view>2019年3月<image src='/icons/down.png' style='width:30rpx;height:18rpx;margin-left:3%;'></image></view> -->
+      <picker mode="date" fields="month" value="{{date}}" start="2019-05" end="2100-12" bindchange="getDateTime">
+        <view class="selectDate">
+          {{date}}
+          <image src='/icons/down.png' style='width:30rpx;height:18rpx;margin-left:3%;'></image>
+        </view>
+      </picker>
+      <view>消费<text>￥55.66</text>充值<text>￥55.66</text></view>
+    
+    </view>
+    <view class='right'>
+      <view style='font-size:26rpx;'>当前余额
+        <text class='orange'>￥55.66</text>
+      </view>
+      <view style='color: #a1a1a1;'>|
+        <text class='blue' bindtap='getRecharge'>去充值</text>
         <image src='/icons/right-arrow.png' style='width:20rpx;height:25rpx;margin-left:3%;'></image>
       </view>
     </view>
   </view>
 
 
+<!-- 列表 -->
   <view class='list-con'>
-
     <view class='select-list'>
       <view class='left'>
         <text class='black'>类型 凝珠设备消费</text>
@@ -54,27 +102,6 @@
         <text>余额 ￥155.66</text>
       </view>
     </view>
-    <view class='select-list'>
-      <view class='left'>
-        <text class='black'>类型 凝珠设备消费</text>
-        <text>2019年2月15日 16.55</text>
-      </view>
-      <view class='right'>
-        <text class='black'>-55.00</text>
-        <text>余额 ￥155.66</text>
-      </view>
-    </view>
-    <view class='select-list'>
-      <view class='left'>
-        <text class='black'>类型 凝珠设备消费</text>
-        <text>2019年2月15日 16.55</text>
-      </view>
-      <view class='right'>
-        <text class='black'>-55.00</text>
-        <text>余额 ￥155.66</text>
-      </view>
-    </view>
-
   </view>
 
 </view>

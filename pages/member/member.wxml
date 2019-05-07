@@ -4,18 +4,25 @@
 </view>
 <view class="container">
 
-  <view class='member-box' bindtap='getMyinfo'>
+  <view class='member-box'>
     <view class='left'>
-      <!-- <icon><image src='/icons/banner.png'></image></icon> -->
-        <icon><open-data type="userAvatarUrl"></open-data></icon>
+        <icon wx:if="{{img == ''}}"><open-data type="userAvatarUrl"></open-data></icon>
+        <icon wx:else><image src='{{img}}' class='img'></image></icon>
       <view class="con">
+        <block  wx:if="{{nick_name != ''}}">
+           <text class="nick-name elli1">{{nick_name}}</text>
+        </block>
+        <block wx:else>
+          <open-data type="userNickName" lang="zh_CN"></open-data>
+        </block>
         <!-- <text class="nick-name elli1">昵称</text> -->
-        <text class="nick-name elli1"><open-data type="userNickName" lang="zh_CN"></open-data></text>
-        <text class='desc elli1'>暂无描述</text>
-      </view>
+        <!-- <open-data type="userNickName" lang="zh_CN"></open-data> -->
+        <text class='desc elli1'>{{info.signature==''?'暂无描述':info.signature}}</text>
+      </view> 
     </view>
     <view class='right'>
-      <image src='/icons/right-arrow.png'></image>
+      <!-- <image src='/icons/right-arrow.png'></image> -->
+       <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bingGetUserInfo"><image src='/icons/right-arrow.png'></image></button>
     </view>
   </view> 
 
@@ -70,7 +77,7 @@
           <image src='/icons/right-arrow.png'></image>
         </view>
       </view>
-    </navigator>
+    </navigator> 
     <tabbar tabbar="{{tabbar}}"></tabbar>
   </view>
 </view>

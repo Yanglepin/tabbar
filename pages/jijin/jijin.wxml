@@ -1,6 +1,6 @@
 <!--pages/jijin/jijin.wxml-->
 <view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
-  <text class='iconfont icon-jiantou-zuo icon-left'></text>
+  <text class='iconfont icon-jiantou-zuo icon-left' bindtap='navigateBack'></text>
   <text>圆梦基金</text>
 </view>
 <view class="container">
@@ -17,9 +17,9 @@
       </view>
     </view>
   </view>
-
   <view class='bottom'>
     圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍
   </view>
-
+   <tabbar tabbar="{{tabbar}}"></tabbar>  
 </view>
+ 

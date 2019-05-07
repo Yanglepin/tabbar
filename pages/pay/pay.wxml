@@ -6,19 +6,19 @@
 <view class="container">
   <view class='top'>
     <view class='left'>
-      <image src='/icons/tou1.png'></image>
+      <image src='{{ImgUrl}}{{details.goods_picture.pic_cover}}'></image>
     </view>
     <view class='right'>
-      <view>商品名称：洗衣凝珠</view>
+      <view>商品名称：{{details.goods_name}}</view>
       <view>商品单价：
-        <text class='orange'>￥5</text>
+        <text class='orange'>￥{{details.price}}</text>
       </view>
       <view class='clearfix'>
         <view class='num-tit'>购买数量 :</view>
         <view class='num clearfix'> 
-          <text>-</text>
-          <input type='number' value='1'/>
-          <text>+</text>
+          <text bindtap='cut' data-num="{{num}}" data-price="{{details.price}}">-</text>
+          <input type='number' value='{{num}}'/>
+          <text bindtap='add' data-num="{{num}}" data-stock='{{details.stock}}' data-price="{{details.price}}">+</text>
         </view>
       </view>
     </view>
@@ -32,9 +32,9 @@
           <text>钱包支付</text>
         </view>
         <view class='right'>
-          <text class='orange'> 当前余额：￥55.65</text>
+          <text class='orange'> 当前余额：￥0.00</text>
           <label>
-              <radio value="1"></radio>
+              <radio value="5"></radio>
           </label>   
         </view>
       </view>
@@ -45,25 +45,25 @@
         </view>
         <view class='right'>
           <label>
-              <radio value="2" checked></radio>
+              <radio value="1" checked></radio>
           </label>   
         </view>
       </view>
     </radio-group>
-
     <view class='member-list-con' style='margin-top: 10%;'>
       <view class='left'>
-        <text>共2件，合计：</text>
+        <text>共{{num}}件，合计：</text>
       </view>
       <view class='right'>
-        <text class='orange'> ￥：55.00</text>
+        <!-- <text class='orange'> ￥：{{parseFloat(num*details.price)}}</text> -->
+        <text class='orange'> ￥：{{num*details.price}}</text>
       </view>
     </view>
 
   </view>
 
   <view class='btn'>
-    <text>立即支付</text>
+    <text bindtap='getPay'>立即支付</text>
   </view>
 
     <tabbar tabbar="{{tabbar}}"></tabbar> 

@@ -1,6 +1,6 @@
 //index.js
 //获取应用实例
-const app = getApp()
+var app = getApp();
 Page({
   data: {
     ImgUrl: app.data.URL,
@@ -8,9 +8,11 @@ Page({
     //tabbar
     movies: [],
     newsList:[],
+    token: app.globalData.token
   }, 
   
   onLoad: function (options) {
+    wx.hideTabBar();
     let that = this;
     this.getBanner();//轮播图
     this.getNewsList();//获取轮播公告
@@ -59,5 +61,7 @@ Page({
     wx.navigateTo({
       url: '../bannerDetails/bannerDetails?topic_id=' + topic_id //详情页
     })
-  }
+  },
+  
+
 })
