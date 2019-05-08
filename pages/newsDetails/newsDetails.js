@@ -9,7 +9,8 @@ Page({
     ImgUrl: app.data.URL,
     statusBarHeight: app.globalData.statusBarHeight,
     content: [],
-    title: ''
+    title: '',
+    time: ''
   },
 
   /** 
@@ -28,8 +29,10 @@ Page({
       },
       method: 'POST',
       success: function (res) {
-        that.setData({
-          content: res.data,
+        console.log(res);
+        that.setData({ 
+          content: res.data, 
+          time: res.data.time,
           title: res.data.notice_title,
         });
         var list = res.data.notice_content;
@@ -41,7 +44,7 @@ Page({
         } else {
           WxParse.wxParse('content', 'html', "", that, 5);
         }
-
+ 
       }
     })
   },

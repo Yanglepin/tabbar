@@ -8,13 +8,36 @@ Page({
   data: {
     ImgUrl: app.data.URL,
     statusBarHeight: app.globalData.statusBarHeight,
-
+    money: 0
   },
   /** 
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getMoney();
+  },
+  onShow: function (options){
+    this.getMoney();
+  },
+  //余额
+  getMoney:function(e){
+    let that = this;
+    wx.request({
+      url: that.data.ImgUrl + 'index.php?s=/api/member/getAccountList',
+      data: {
+        token: app.globalData.openId
+      },
+      method: "POST",
+      success: function (res) {
+        // console.log(res.data.money);
+        if (res.data.money==null){
+          res.data.money=0;
+        }
+       that.setData({
+         money: res.data.money
+       })
+      }
+    })
   },
   //充值
   getRecharge: function (e) {

@@ -1,4 +1,5 @@
 <!--pages/jijin/jijin.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>   
 <view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
   <text class='iconfont icon-jiantou-zuo icon-left' bindtap='navigateBack'></text>
   <text>圆梦基金</text>
@@ -9,17 +10,17 @@
     <view class='box'>
       <view class='left'>
         <text>我的基金</text>
-        <text class='blue'>150</text>
+        <text class='blue'>￥{{count.point}}</text>
       </view>
       <view class='right'>
         <text>总计基金</text>
-        <text class='orange'>50000</text>
+        <text class='orange'>￥{{count.point}}</text>
       </view>
     </view>
-  </view>
+  </view> 
   <view class='bottom'>
-    圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍圆梦基金介绍
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
   </view>
-   <tabbar tabbar="{{tabbar}}"></tabbar>  
+   <!-- <tabbar tabbar="{{tabbar}}"></tabbar>   -->
 </view>
  

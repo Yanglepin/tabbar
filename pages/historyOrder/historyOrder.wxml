@@ -9,7 +9,7 @@
     <view class='top'>订单日期   {{item.time}}</view>
     <view class='bottom'>
       <view>商品数量：<text>{{item.order_item_list[0].num}}</text></view>
-      <view>订单金额：<text class='orange'>{{item.goods_money}}</text></view>
+      <view>订单金额：<text class='orange'>￥{{item.goods_money}}</text></view>
     </view>
     <view class='bottom'>
       <view class='elli1'>订单编号：{{item.out_trade_no}}</view>

@@ -27,7 +27,7 @@
     </view>
   </view>
   <view class='bottom'>
-    <view class='title'>充值后余额为<text class='orange'>156.66</text>元</view>
+    <view class='title'>充值后余额为<text class='orange'>{{yue}}</text>元</view>
     <view class='wechat'>
       <image src='/icons/wechat.png'></image>
       <text>微信支付</text>

@@ -12,96 +12,107 @@
     <view class="select_box" wx:if="{{select}}">
       <view class="select_one" bindtap="mySelect" data-name="全部交易类型" data-value="0">全部交易类型</view>
       <view class="select_one" bindtap="mySelect" data-name="消费" data-value="1">消费</view>
-      <view class="select_one" bindtap="mySelect" data-name="充值" data-value="2">充值</view>
+      <view class="select_one" bindtap="mySelect" data-name="充值" data-value="5">充值</view>
     </view>
   </view>
 
   <!-- 时间控件 -->
   <!-- 消费 -->
-  <view class='middle' wx:if="{{val==1}}">
-    <view class='left'>
-      <!-- <view>2019年3月<image src='/icons/down.png' style='width:30rpx;height:18rpx;margin-left:3%;'></image></view> -->
-      <picker mode="date" fields="month" value="{{date}}" start="2019-05" end="2100-12" bindchange="getDateTime">
-        <view class="selectDate">
-          {{date}}
-          <image src='/icons/down.png' style='width:30rpx;height:18rpx;margin-left:3%;'></image>
-        </view>
-      </picker>
-      <view>共消费
-        <text class='orange'>￥55.66</text>
-      </view>
-    </view>
-    <view class='right'>
-      <view style='font-size:26rpx;'>当前余额
-        <text class='orange'>￥55.66</text>
-      </view>
-      <view style='color: #a1a1a1;'>|
-        <text class='blue' bindtap='getRecharge'>去充值</text>
-        <image src='/icons/right-arrow.png' style='width:20rpx;height:25rpx;margin-left:3%;'></image>
-      </view>
-    </view>
-  </view>
- <!-- 充值 -->
-  <view class='middle' wx:if="{{val==2}}">
-    <view class='left'>
-      <!-- <view>2019年3月<image src='/icons/down.png' style='width:30rpx;height:18rpx;margin-left:3%;'></image></view> -->
-      <picker mode="date" fields="month" value="{{date}}" start="2019-05" end="2100-12" bindchange="getDateTime">
-        <view class="selectDate">
-          {{date}}
-          <image src='/icons/down.png' style='width:30rpx;height:18rpx;margin-left:3%;'></image>
-        </view>
-      </picker>
-      <view>共充值
-        <text class='orange'>￥55.66</text>
-      </view>
-    </view>
-    <view class='right'>
-      <view style='font-size:26rpx;'>当前余额
-        <text class='orange'>￥55.66</text>
-      </view>
-      <view style='color: #a1a1a1;'>|
-        <text class='blue' bindtap='getRecharge'>去充值</text>
-        <image src='/icons/right-arrow.png' style='width:20rpx;height:25rpx;margin-left:3%;'></image>
-      </view>
-    </view>
-  </view>
-  <!-- 全部交易类型 -->
-  <view class='middle' wx:if="{{val==0}}">
-    <view class='left'>
-      <!-- <view>2019年3月<image src='/icons/down.png' style='width:30rpx;height:18rpx;margin-left:3%;'></image></view> -->
-      <picker mode="date" fields="month" value="{{date}}" start="2019-05" end="2100-12" bindchange="getDateTime">
-        <view class="selectDate">
-          {{date}}
-          <image src='/icons/down.png' style='width:30rpx;height:18rpx;margin-left:3%;'></image>
-        </view>
-      </picker>
-      <view>消费<text>￥55.66</text>充值<text>￥55.66</text></view>
-    
-    </view>
-    <view class='right'>
-      <view style='font-size:26rpx;'>当前余额
-        <text class='orange'>￥55.66</text>
-      </view>
-      <view style='color: #a1a1a1;'>|
-        <text class='blue' bindtap='getRecharge'>去充值</text>
-        <image src='/icons/right-arrow.png' style='width:20rpx;height:25rpx;margin-left:3%;'></image>
-      </view>
-    </view>
-  </view>
-
-
-<!-- 列表 -->
-  <view class='list-con'>
-    <view class='select-list'>
+    <view class='middle' wx:if="{{val==1}}">
       <view class='left'>
-        <text class='black'>类型 凝珠设备消费</text>
-        <text>2019年2月15日 16.55</text>
+        <!-- <view>2019年3月<image src='/icons/down.png' style='width:30rpx;height:18rpx;margin-left:3%;'></image></view> -->
+        <picker mode="date" fields="month" value="{{date}}" start="2019-05" end="2100-12" bindchange="getDateTime">
+          <view class="selectDate">
+            {{date}}
+            <image src='/icons/down.png' style='width:30rpx;height:18rpx;margin-left:3%;'></image>
+          </view>
+        </picker>
+        <view>共消费
+          <text class='orange' wx:if='{{accountList.huafei_num}}'>￥{{accountList.huafei_num}}</text>
+          <text class='orange' wx:else>￥0.00</text>
+        </view>
       </view>
       <view class='right'>
-        <text class='black'>-55.00</text>
-        <text>余额 ￥155.66</text>
+        <view style='font-size:26rpx;'>当前余额
+          <text class='orange'>￥{{accountList.money}}</text>
+        </view>
+        <view style='color: #a1a1a1;'>|
+          <text class='blue' bindtap='getRecharge'>去充值</text>
+          <image src='/icons/right-arrow.png' style='width:20rpx;height:25rpx;margin-left:3%;'></image>
+        </view>
       </view>
     </view>
-  </view>
+  <!-- 充值 -->
+    <view class='middle' wx:if="{{val==5}}">
+      <view class='left'>
+        <!-- <view>2019年3月<image src='/icons/down.png' style='width:30rpx;height:18rpx;margin-left:3%;'></image></view> -->
+        <picker mode="date" fields="month" value="{{date}}" start="2019-05" end="2100-12" bindchange="getDateTime">
+          <view class="selectDate">
+            {{date}}
+            <image src='/icons/down.png' style='width:30rpx;height:18rpx;margin-left:3%;'></image>
+          </view>
+        </picker>
+        <view>共充值
+          <text class='orange' wx:if='{{accountList.chzhi_num}}'>￥{{accountList.chzhi_num}}</text>
+          <text class='orange' wx:else>￥0.00</text>
+        </view>
+      </view>
+      <view class='right'>
+        <view style='font-size:26rpx;'>当前余额
+          <text class='orange'>￥{{accountList.money}}</text>
+        </view>
+        <view style='color: #a1a1a1;'>|
+          <text class='blue' bindtap='getRecharge'>去充值</text>
+          <image src='/icons/right-arrow.png' style='width:20rpx;height:25rpx;margin-left:3%;'></image>
+        </view>
+      </view>
+    </view>
+    <!-- 全部交易类型 -->
+    <view class='middle' wx:if="{{val==0}}">
+      <view class='left'>
+        <!-- <view>2019年3月<image src='/icons/down.png' style='width:30rpx;height:18rpx;margin-left:3%;'></image></view> -->
+        <picker mode="date" fields="month" value="{{date}}" start="2019-05" end="2100-12" bindchange="getDateTime">
+          <view class="selectDate">
+            {{date}}
+            <image src='/icons/down.png' style='width:30rpx;height:18rpx;margin-left:3%;'></image>
+          </view>
+        </picker>
+        <view>
+          消费<text wx:if='{{accountList.huafei_num}}'>￥{{accountList.huafei_num}}</text>
+             <text wx:else>￥0.00</text>
+          充值<text  wx:if='{{accountList.chzhi_num}}'>￥{{accountList.chzhi_num}}</text>
+             <text wx:else>￥0.00</text>
+        </view>
+      
+      </view>
+      <view class='right'>
+        <view style='font-size:26rpx;'>当前余额
+          <text class='orange'>￥{{accountList.money}}</text>
+        </view>
+        <view style='color: #a1a1a1;'>|
+          <text class='blue' bindtap='getRecharge'>去充值</text>
+          <image src='/icons/right-arrow.png' style='width:20rpx;height:25rpx;margin-left:3%;'></image>
+        </view>
+      </view>
+    </view>
+
+
+  <!-- 列表 -->
+    <view class='list-con' wx:for='{{list}}' wx:for-index="index" wx:key="*this">
+      <view class='select-list'>
+        <view class='left'>
+          <text class='black'>类型 {{item.type}}</text>
+          <text>{{item.time}}</text>
+        </view>
+        <view class='right'>
+          <text class='black' wx:if="{{item.order_type==5}}">+{{item.pay_money}}</text>
+          <text class='black' wx:if="{{item.order_type==1}}">-{{item.pay_money}}</text>
+          <text>余额 ￥{{accountList.money}}</text>
+        </view>
+      </view> 
+    </view>
+    <view class='list-con' wx:if="{{list==''}}" style='height:80rpx;line-height:80rpx;font-size:30rpx;text-align:center;'> 
+      暂时没有数据
+    </view>
 
 </view>

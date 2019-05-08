@@ -8,15 +8,38 @@ Page({
   data: {
     ImgUrl: app.data.URL,
     statusBarHeight: app.globalData.statusBarHeight,
-
+    money: 0
   },
 
   /** 
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getMoney();
   },
+  //余额
+  getMoney: function (e) {
+    let that = this;
+    wx.request({
+      url: that.data.ImgUrl + 'index.php?s=/api/member/getAccountList',
+      data: {
+        token: app.globalData.openId
+      },
+      method: "POST",
+      success: function (res) {
+        // console.log(res.data.money);
+        that.setData({
+          money: res.data.money
+        })
+      }
+    })
+  },
+  
+  getIndex: function(e) {
+    wx.switchTab({
+      url: '../index/index'
+    })
+  }, 
 
   /**
    * 生命周期函数--监听页面初次渲染完成

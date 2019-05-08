@@ -1,40 +1,42 @@
 /* pages/jijin/jijin.wxss */
 page{
-  background-color: #cccccc;
+  background-color: #f2f2f2;
+  height: 100%;
 }
 .top{
   width: 100%;
   margin-top: 2%;
   text-align: center;
   position: relative;
+  background-color: #ccc;
 }
 .top image{
-  width: 90%;
+  width: 92%;
   height: 320rpx;
 }
 .top .box{
   position: absolute;
   background-color: #fff;
+  box-shadow: 2px 2px 12px #dbdbdb;
   border-radius: 10rpx;
-  height: 280rpx;
-  width: 85%;
-  left: 7.5%;
+  height: 260rpx;
+  width: 87%;
+  left: 6.5%;
   top: 68%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  
+  justify-content: space-around; 
 }
 .top .box .left,.top .box .right{
   width: 50%;
-  height: 80%;
+  height: 60%;
   color: #545454;
   display: flex;
   flex-direction: column;
-  margin: 5% 0rpx;
+  margin: 8% 0rpx;
 }
 .top .box .left{
-  border-right: 1px solid #333;
+  border-right: 1px solid #f2f2f2;
   box-sizing: border-box;
 }
 .top .box .left text,.top .box .right text{
@@ -42,21 +44,26 @@ page{
 }
 .top .box .left text:first-child,.top .box .right text:first-child{
   font-size: 26rpx;
-  height: 70rpx;
-  line-height: 70rpx;
-  margin-top: 15%;
+  height: 70rpx; 
+  line-height: 70rpx; 
+  /* margin-top: 15%; */
+  color: #666;
 }
 .top .box .left text.blue{
   color: #6cdada;
-  font-size: 36rpx;
+  font-size: 42rpx;
 }
 .top .box .right text.orange{
-  font-size: 36rpx;
+  font-size: 42rpx;
 }
 .bottom{
-  margin-top: 30%;
+  padding-top: 30%;
   width: 90%;
-  background-color: #fff;
   padding: 5%;
+  min-height: 50%;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  color: #666;
+  background-color: #fff;
 }
 

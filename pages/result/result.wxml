@@ -7,9 +7,9 @@
   <view class='con'>
     <image src='/icons/result.png'></image>
     <view class='blue'>充值成功</view>
-    <view class='yue'>当前账户余额<text class='orange'> 156.66 </text>元</view>
+    <view class='yue'>当前账户余额<text class='orange'> {{money}} </text>元</view>
   </view>
   <view class='left-btn'>
-    <text class='linercolor'>返回主页</text>
+    <text class='linercolor' bindtap='getIndex'>返回主页</text>
   </view>
 </view>

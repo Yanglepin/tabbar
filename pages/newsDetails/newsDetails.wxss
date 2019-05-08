@@ -1,4 +1,4 @@
 /* pages/newDetails/newsDetails.wxss */
 .container {
-  padding-top: 22%;
+  padding-top: 18%;
 }

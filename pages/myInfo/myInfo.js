@@ -40,7 +40,7 @@ Page({
       },
       method: 'POST',   
       success: function (res) {     
-        console.log("个人资料" + JSON.stringify(res.data));
+        // console.log("个人资料" + JSON.stringify(res.data));
         that.setData({
           info: res.data,
           img: res.data.user_headimg,

@@ -51,3 +51,16 @@ page{
 .orange{
   font-size: 30rpx;
 }
+.left-btn{
+  width: 100%;
+  text-align: center;
+  margin-top: 50%;
+}
+.left-btn text{
+  display: inline-block;
+  width: 90%;
+  font-size: 32rpx;
+  color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+}

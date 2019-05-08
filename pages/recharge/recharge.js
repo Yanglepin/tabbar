@@ -11,7 +11,8 @@ Page({
     isChecked: 0,//判断是否选中
     select: ["10元", "20元", "30元","50元"],
     nick_name: '',
-    money:0.01
+    money:0.01,
+    yue:0
   },
 
   /** 
@@ -19,6 +20,10 @@ Page({
    */
   onLoad: function (options) {
     this.personalData();
+    this.getMoney();
+  },
+  onShow: function (options){
+    this.getMoney();
   },
   choose: function (e) {
     var that = this;
@@ -79,7 +84,7 @@ Page({
                   console.log(res);
                   setTimeout(function () {
                     wx.navigateTo({
-                      url: '../mingxi/mingxi',
+                      url: '../result/result',
                     })
                   }, 800);
                 },
@@ -95,6 +100,23 @@ Page({
           })
         }
        
+      }
+    })
+  },
+  //余额
+  getMoney: function (e) {
+    let that = this;
+    wx.request({
+      url: that.data.ImgUrl + 'index.php?s=/api/member/getAccountList',
+      data: {
+        token: app.globalData.openId
+      },
+      method: "POST",
+      success: function (res) {
+        // console.log(res.data.money);
+        that.setData({
+          yue: res.data.money
+        })
       }
     })
   },

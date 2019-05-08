@@ -10,7 +10,7 @@
       <text class="blue" bindtap='getmingxi'>查看明细</text>
     </view>
     <view class='money'>
-      <text class='orange'>166.55元</text>
+      <text class='orange'>{{money}}元</text>
       <text class='recharge' bindtap='getRecharge'>充值</text>
     </view>
   </view>

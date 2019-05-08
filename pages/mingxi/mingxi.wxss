@@ -47,11 +47,11 @@ page{
   padding: 3% 0rpx;
 }
 .list-con .select-list .left,.list-con .select-list .right{
-  color: #5d5d5d;
+  color: #a8a8a8;
   font-size: 28rpx;
   margin: 0 5%;
 }
-text.black{
+.list-con .select-list .left text.black,.list-con .select-list .right text.black{
   color: #000;
 }
 .list-con .select-list .left text,.list-con .select-list .right text{
@@ -59,6 +59,7 @@ text.black{
   height: 50rpx;
   line-height: 50rpx;
 }
+
 .list-con .select-list .right text{
   text-align: right;  
 }

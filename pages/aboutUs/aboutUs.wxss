@@ -22,10 +22,16 @@
   line-height: 100rpx;
 }
 .intro{
-  padding: 0rpx 3%;
+  /* padding: 0rpx 3%; */
   font-size: 26rpx;
   line-height: 40rpx;
 }
-.wxParse-p>WxEmojiView{
-  text-indent: 50rpx !important;
+.intro .wxParse-p .wxParse-img{
+  margin: 0rpx; 
+  width: 100%!important; 
+}
+
+.intro .wxParse-p>.WxEmojiView {
+  text-indent: 2em;
+  margin: 0rpx 2%;
 }

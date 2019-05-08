@@ -9,12 +9,13 @@
   line-height: 100rpx;
   color: #464646;
   font-size: 30rpx;
-  border-bottom: 1px solid #b7b7b7;
+  border-bottom: 1px solid #f2f2f2;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
+
 .info-box .info-list:first-child{
   height: 140rpx;
   line-height: 140rpx;
@@ -28,16 +29,18 @@
   height: 100rpx;
   line-height: 100rpx;
   margin-right: 10%;
+  color: #a0a0a0;
   /* width: 80%; */
   /* vertical-align: middle; */
 }
 .info-list .con input{
-  border: 1rpx solid #dadada;
+  /* border: 1rpx solid #dadada; */
   border-radius: 8rpx;
   height: 70rpx;
   line-height: 70rrpx;
   margin-top:15rpx;
   padding-left: 20rpx;
+  text-align: right;
 }
 
 .info-list .con icon.tou image{
@@ -71,7 +74,9 @@
   width: 65%;
 }
 .info-list1 textarea{
-  border: 1rpx solid #dadada;
+  /* border: 1rpx solid #dadada; */
+  color: #a0a0a0;
+  text-align: right;
   border-radius: 8rpx;
   margin-top:15rpx;
   margin-left: 16%;

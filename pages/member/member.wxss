@@ -1,6 +1,6 @@
 /* pages/member/member.wxss */
 .member-box{
-  width: 84%;
+  width: 96%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -11,7 +11,9 @@
   display: flex;
   flex-direction: row;
   width: 85%;
+  margin-left: 8%;
 }
+
 .member-box .left .con{
   display: flex;
   flex-direction: column;
@@ -31,11 +33,12 @@
   border-radius: 50%;
 }
 .member-box .left icon image.img{
-  width: 100rpx;
-  height: 100rpx; 
+  width: 105rpx;
+  height: 105rpx; 
 }
 .member-box .left .con text{
   display: inline-block;
+  font-weight: bold;
 }
 .member-box .left .con text.nack-name{
   color: #000;
@@ -54,8 +57,9 @@
 
 .member-top{
   width: 90%;
-  margin: 5%;
+  margin: 3% 5% 3% 5%;
   background-color: #fff;
+  box-shadow: 2px 2px 12px #dbdbdb;
   border-radius: 20rpx;
   display: flex;
   flex-direction: row;
@@ -97,7 +101,7 @@
   align-items: center;
 }
 .member-list .member-list-con:first-child{
-  border-bottom: 1px solid #aeaeae;
+  border-bottom: 1px solid #f2f2f2;
 }
 .member-list .member-list-con .left{
    width: 80%;

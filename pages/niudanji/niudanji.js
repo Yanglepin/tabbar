@@ -50,7 +50,7 @@ Page({
     // console.log("下拉刷新");
     that.setData({
       page_index: 1, 
-      lvList: []
+      niudanji: []
     });
     console.log(that.data.latitude + "--" + that.data.longitude);
     wx.request({
@@ -63,7 +63,7 @@ Page({
       },
       method: "POST", 
       success: function (res) {
-        // console.log(res.data.data);
+        console.log(res.data);
         that.setData({
           niudanji: res.data.data
         });
@@ -98,7 +98,7 @@ Page({
       data: {
         lng: that.data.longitude,
         lat: that.data.latitude,
-        page_index: that.data.page_index,
+        page_index: that.data.page_index, 
         page_size: that.data.page_size
       },
       method: "POST",
@@ -137,11 +137,11 @@ Page({
       },
       method: 'POST',
       success: function (res) { 
-        // console.log("获取扭蛋机列表" + JSON.stringify(res.data.address));
+        console.log("获取扭蛋机列表" + JSON.stringify(res.data.data));
         that.setData({
           niudanji: that.data.niudanji.concat(res.data.data),
           page_count: res.data.page_count,
-          address: res.data.address
+          address: res.data.address 
         }) 
       },
       complete: function () {

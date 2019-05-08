@@ -28,7 +28,7 @@
     <view class='info-list1'>
       <view class='name'>个人签名</view> 
       <view class='con'>
-        <textarea placeholder='请输入个性签名' bindinput='gqianInput' value='{{info.signature}}'></textarea>
+        <textarea placeholder='这个人很懒，什么都没有写' bindinput='gqianInput' value='{{info.signature}}'></textarea>
       </view>
     </view>
   </view>

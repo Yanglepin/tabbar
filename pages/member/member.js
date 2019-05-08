@@ -49,17 +49,17 @@ Page({
     })
   },
   //个人资料
-  personalData: function () {
-    let that = this;
+  personalData: function () { 
+    let that = this; 
     console.log(app.globalData.token);
     wx.request({
       url: that.data.ImgUrl + 'index.php?s=/api/member/personalData',
       data: {
         token: app.globalData.openId
       },
-      method: 'POST',
-      success: function (res) {
-        // console.log("个人资料" + JSON.stringify(res.data));
+      method: 'POST', 
+      success: function (res) { 
+        console.log("个人资料" + JSON.stringify(res.data));
         that.setData({
           info: res.data,
           img: res.data.user_headimg,

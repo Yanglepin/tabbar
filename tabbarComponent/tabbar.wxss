@@ -36,9 +36,13 @@
     height: 100%;
     position: relative;
 }
+.tabbar_nav text{
+  font-size: 24rpx;
+}
 .tabbar_icon{
     width: 56rpx;
     height: 56rpx;
+    margin-bottom: 1.2%;
 }
 .special-wrapper{
   position: absolute;

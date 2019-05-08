@@ -5,8 +5,10 @@
   <text class='elli1'>{{title}}</text>
 </view>
 <view class="container">
+  <view style="color:#333;font-size:30rpx;line-height:60rpx;">{{title}}</view>
+  <view style="color:#666;font-size:28rpx;">发布时间：{{time}}</view>
   <view class='wxParse'>
     <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
   </view>
 </view>
-   
+    

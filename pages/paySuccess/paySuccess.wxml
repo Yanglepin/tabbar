@@ -7,12 +7,15 @@
   <view class='top'><image src='/icons/wechat1.png'></image>支付成功</view>
   <view class='list'>
     <view class='tit'>订单信息</view>
-    <view class='gray'>订单创建时间  2019年3月25日 11:30</view>
-    <view class='gray'>设备位置   黄河科技大学7号楼1楼</view>
-    <view class='gray'>订单金额 <text class='orange'>55.00</text></view>
+    <view class='gray'><text decode="{{true}}">订单创建时间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>{{result.time}}</view>
+    <view class='gray'><text decode="{{true}}">设备位置&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>{{result.address}}</view>
+    <view class='gray'><text decode="{{true}}">订单金额&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text><text class='orange'>{{result.pay_money}}</text></view>
   </view>
   <view class='bottom'>
-    <view>订单编号  BH01111123456</view>
-    <view>设备编号 BH01111123456</view>
+    <view><text decode="{{true}}">订单编号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>{{result.out_trade_no}}</view>
+    <view><text decode="{{true}}">设备编号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>{{result.code}}</view>
+  </view>
+   <view class='left-btn'>
+    <text class='linercolor' bindtap='getIndex'>返回首页</text> 
   </view>
 </view>

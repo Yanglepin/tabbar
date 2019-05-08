@@ -49,29 +49,33 @@ Component({
     getScan: function () {
       wx.scanCode({
         success: (res) => {
-          console.log(res);
-          if (res.result){
-            let qrUrl = decodeURIComponent(res.result);
-            // console.log(qrUrl);
+          console.log("res:"+JSON.stringify(res));
+          // if (res.result){
+          //   let qrUrl = decodeURIComponent(res.result);
+          //   // console.log(qrUrl);
            
+          //   console.log(this.getQueryString(qrUrl, 'id'));
+          //   wx.navigateTo({
+          //     url: '/pages/pay/pay?goodsid=' + this.getQueryString(qrUrl, 'id') + '&&code=' + this.getQueryString(qrUrl, 'gcode')
+          //   })
+          //   console.log(res.result);
+          // }else{
+          //   wx.showToast({
+          //     title: '请重新扫描！',
+          //   })
+          //   return false;
+          // }
+
+          if (res.path) {
+            let qrUrl = decodeURIComponent(res.path);
+            // console.log(qrUrl);
+
             console.log(this.getQueryString(qrUrl, 'id'));
             wx.navigateTo({
               url: '/pages/pay/pay?goodsid=' + this.getQueryString(qrUrl, 'id') + '&&code=' + this.getQueryString(qrUrl, 'gcode')
             })
-            console.log(res.result);
-            // wx.request({
-            //   url: res.result,  
-            //   method: 'get',
-            //   success: function (res) {
-            //     console.log(res);
-            //     var goodsid = res.data.goods_id;//商品id
-            //     var code = res.data.code;//商品编号  
-            //     wx.navigateTo({
-            //       url: '/pages/pay/pay?goodsid=' + goodsid + '&&code=' + code
-            //     })
-            //   }
-            // })
-          }else{
+            console.log(res.path);
+          } else {
             wx.showToast({
               title: '请重新扫描！',
             })

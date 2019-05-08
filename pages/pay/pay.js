@@ -12,7 +12,8 @@ Page({
     details: [],
     mount: 0,
     goods_id:'',
-    code:''
+    code:'',
+    out_trade_no: ''
     // openid:''
   },
 
@@ -22,8 +23,24 @@ Page({
   onLoad: function (options) { 
     let that = this;
     // 微信扫码
-    if (options.q !== undefined) {
-      var scan_url = decodeURIComponent(options.q);
+    // var scene = decodeURIComponent(options.scene)//参数二维码传递过来的参数
+    // console.log("参数二维码传递过来的参数:" + scene);
+    // if (options.q !== undefined) {
+      
+    //   var scan_url = decodeURIComponent(options.q);
+    //   console.log(scan_url);
+    //   that.setData({
+    //     goods_id: this.getQueryString(scan_url, 'id'),
+    //     code: this.getQueryString(scan_url, 'gcode')
+    //   })
+    // } else {
+    //   that.setData({
+    //     goods_id: options.goodsid,
+    //     code: options.code
+    //   })
+    // }
+    if (options.scene !== undefined) {
+      var scan_url = decodeURIComponent(options.scene);
       console.log(scan_url);
       that.setData({
         goods_id: this.getQueryString(scan_url, 'id'),
@@ -31,7 +48,7 @@ Page({
       })
     } else {
       that.setData({
-        goods_id: options.goodsid,
+        goods_id: options.goodsid, 
         code: options.code
       })
     }
@@ -128,6 +145,9 @@ Page({
         console.log("立即支付:" + JSON.stringify(res));
         // console.log(res.data.code);
         // console.log(app.globalData.openId);
+        that.setData({
+          out_trade_no: res.data.code
+        })
         if (res.data.code>0){
           wx.request({
             url: that.data.ImgUrl + 'index.php?s=/api/pay/getPayValue',
@@ -149,7 +169,7 @@ Page({
                   console.log(res);
                   setTimeout(function () { 
                     wx.navigateTo({
-                      url: '../historyOrder/historyOrder',
+                      url: '../paySuccess/paySuccess?out_trade_no=' + that.data.out_trade_no,
                     })
                   }, 800);
                 },

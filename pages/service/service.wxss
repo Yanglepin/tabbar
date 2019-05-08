@@ -9,7 +9,8 @@ page{
   height: 80rpx;
   line-height: 80rpx;
   background-color: #f2f2f2;
-}
+  font-weight: bold;
+} 
 
 .help {
   width: 100%;
@@ -22,14 +23,15 @@ page{
   font-size: 30rpx;
   height: 70rpx;
   line-height: 70rpx;
-  border-bottom: 1px solid #b7b7b7;
+  border-bottom: 1px solid #f2f2f2;
   display: flex;
 }
 .help .help_item .title .title_1 {
   width: 630rpx;
   height: 70rpx;
   padding-left: 5%;
-  color: #464646;
+  color: #999;
+  font-size: 30rpx;
 }
 .help .help_item .title .title_2 {
   width: 50rpx;
@@ -46,7 +48,13 @@ page{
   font-size: 25rpx;
   line-height: 50rpx;
   text-indent: 2em;
-  border-bottom: 1px solid #b7b7b7;
+  border-bottom: 1px solid #f2f2f2;
+}
+.help .help_item .detail .wxParse-p .WxEmojiView{
+  color: #666;
+  line-height: 45rpx;
+  font-size: 28rpx;
+  margin-bottom: 2%;
 }
 .btn{
   width: 100%;
