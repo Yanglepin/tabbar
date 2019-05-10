@@ -13,12 +13,13 @@ Page({
     mount: 0,
     goods_id:'',
     code:'',
-    out_trade_no: ''
+    out_trade_no: '',
+    money:0
     // openid:''
   },
 
   /** 
-   * 生命周期函数--监听页面加载
+   * 生命周期函数--监听页面加载 
    */
   onLoad: function (options) { 
     let that = this;
@@ -39,23 +40,37 @@ Page({
     //     code: options.code
     //   })
     // }
-    if (options.scene !== undefined) {
+    
+    // var scan_url = decodeURIComponent(options.scene);
+
+    // wx.showModal({
+    //   title: scan_url,
+    //   content: scan_url, 
+    // })
+    // var query = options.query.gcode;
+    // wx.showModal({
+    //   title: scan_url,
+    //   content: scan_url + '---' + options.query + '----' + this.getQueryString(scan_url, 'gcode'),
+    // })
+    
+    if (options.scene != undefined) {
       var scan_url = decodeURIComponent(options.scene);
       console.log(scan_url);
       that.setData({
-        goods_id: this.getQueryString(scan_url, 'id'),
+        // goods_id: this.getQueryString(scan_url, 'id'),
         code: this.getQueryString(scan_url, 'gcode')
       })
     } else {
       that.setData({
-        goods_id: options.goodsid, 
-        code: options.code
+        // goods_id: options.goodsid, 
+        code: options.gcode
       })
     }
-    console.log("goods_id:" + that.data.goods_id);
+    // console.log("goods_id:" + that.data.goods_id);
     console.log("code:" + that.data.code);
     console.log("获取token:" + app.globalData.token);
     app.editTabbar();
+    this.getMoney();
     //商品详情
     // var goods_id = options.goodsid;
     // var code = options.code;
@@ -66,7 +81,7 @@ Page({
     wx.request({
       url: that.data.ImgUrl + 'index.php?s=/api/order/goodsDetial',
       data: {
-        goods_id: that.data.goods_id, 
+        // goods_id: that.data.goods_id, 
         code: that.data.code,
         token: app.globalData.openId  
       },
@@ -75,6 +90,7 @@ Page({
         console.log(res);
         that.setData({
           details: res.data,
+          goods_id: res.data.goods_id, 
           // mount: res.data.price
         })
         
@@ -159,28 +175,62 @@ Page({
             success: function (res) {
               console.log(res);
               // console.log(typeof (res.data.timeStamp));
-              wx.requestPayment({
-                'timeStamp': String(res.data.timeStamp),
-                'nonceStr': res.data.nonceStr,
-                'package': res.data.package,
-                'signType': 'MD5',
-                'paySign': res.data.paySign,
-                'success': function (res) {
-                  console.log(res);
-                  setTimeout(function () { 
-                    wx.navigateTo({
-                      url: '../paySuccess/paySuccess?out_trade_no=' + that.data.out_trade_no,
-                    })
-                  }, 800);
-                },
-                'fail': function (res) {
-                  // alert(JSON.stringify(res));
-                  console.log(res);
-                }
-              })
+              if(res.data==1){
+                setTimeout(function () {
+                  wx.navigateTo({
+                    url: '../paySuccess/paySuccess?out_trade_no=' + that.data.out_trade_no,
+                  })
+                }, 800);
+              } else if (res.data == -1){
+                  wx.showToast({
+                    title: '支付失败，请重试！',
+                  })
+                  return false;
+              }else{
+                wx.requestPayment({
+                  'timeStamp': String(res.data.timeStamp),
+                  'nonceStr': res.data.nonceStr,
+                  'package': res.data.package,
+                  'signType': 'MD5',
+                  'paySign': res.data.paySign,
+                  'success': function (res) {
+                    console.log(res);
+                    setTimeout(function () {
+                      wx.navigateTo({
+                        url: '../paySuccess/paySuccess?out_trade_no=' + that.data.out_trade_no,
+                      })
+                    }, 800);
+                  },
+                  'fail': function (res) {
+                    // alert(JSON.stringify(res));
+                    console.log(res);
+                  }
+                })
+              }
+
             }
           })
         }
+      }
+    })
+  },
+  //余额
+  getMoney: function (e) {
+    let that = this;
+    wx.request({
+      url: that.data.ImgUrl + 'index.php?s=/api/member/getAccountList',
+      data: {
+        token: app.globalData.openId
+      },
+      method: "POST",
+      success: function (res) {
+        // console.log(res.data.money);
+        if (res.data.money == null) {
+          res.data.money = 0;
+        }
+        that.setData({
+          money: res.data.money
+        })
       }
     })
   },

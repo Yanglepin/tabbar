@@ -9,7 +9,7 @@ Page({
     ImgUrl: app.data.URL,
     statusBarHeight: app.globalData.statusBarHeight,
     avatarUrl:'',
-    // nickName:'',
+    nickName:'',
     info:{},
     img:'',
     nick_name:'',//昵称
@@ -24,7 +24,7 @@ Page({
     that.personalData(); //个人资料 
     that.setData({
       avatarUrl: options.avatarUrl,
-      nick_name: options.nickName
+      nickName: options.nickName
     });
     // console.log(options.nickName);
     // console.log(options.avatarUrl); 
@@ -41,6 +41,11 @@ Page({
       method: 'POST',   
       success: function (res) {     
         // console.log("个人资料" + JSON.stringify(res.data));
+        var img = res.data.user_headimg;
+        img.substr(0, 1);
+        if (img.substr(0, 1) == "u") {
+          res.data.user_headimg = that.data.ImgUrl + res.data.user_headimg;
+        }
         that.setData({
           info: res.data,
           img: res.data.user_headimg,
@@ -59,7 +64,7 @@ Page({
         // return false; 
         const tempFilePaths = res.tempFilePaths;
         wx.uploadFile({
-          url: 'https://ndj.xieenguoji.com/index.php?s=/api/member/uploadimg', // 仅为示例，非真实的接口地址
+          url: 'https://ndj.xieenguoji.com/index.php?s=/api/member/uploadimg', 
           filePath: tempFilePaths[0],
           name: 'file',
           formData: {

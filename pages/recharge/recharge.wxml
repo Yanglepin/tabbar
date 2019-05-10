@@ -15,7 +15,7 @@
       <!-- <text bindtap='choose'>20元</text> -->
       <!-- <text>30元</text>
       <text>50元</text>
-      <text>100元</text>
+      <text>100元</text> 
       <text>200元</text> --> 
     </view>
   </view>

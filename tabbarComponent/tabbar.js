@@ -65,14 +65,14 @@ Component({
           //   })
           //   return false;
           // }
-
+          
           if (res.path) {
             let qrUrl = decodeURIComponent(res.path);
             // console.log(qrUrl);
-
-            console.log(this.getQueryString(qrUrl, 'id'));
+           
+            // console.log(this.getQueryString(qrUrl, 'id'));
             wx.navigateTo({
-              url: '/pages/pay/pay?goodsid=' + this.getQueryString(qrUrl, 'id') + '&&code=' + this.getQueryString(qrUrl, 'gcode')
+              url: '/pages/pay/pay?gcode=' + this.getQueryString(qrUrl, 'gcode')
             })
             console.log(res.path);
           } else {

@@ -6,6 +6,7 @@
 
   <view class='member-box'>
     <view class='left'>
+        <!-- <icon><open-data type="userAvatarUrl"></open-data></icon> -->
         <icon wx:if="{{img == ''}}"><open-data type="userAvatarUrl"></open-data></icon>
         <icon wx:else><image src='{{img}}' class='img'></image></icon>
       <view class="con">

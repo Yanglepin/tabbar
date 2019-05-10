@@ -20,7 +20,7 @@
           <input type='number' value='{{num}}'/>
           <text bindtap='add' data-num="{{num}}" data-stock='{{details.stock}}' data-price="{{details.price}}">+</text>
         </view>
-      </view>
+      </view> 
     </view>
   </view>
 
@@ -32,11 +32,11 @@
           <text>钱包支付</text>
         </view>
         <view class='right'>
-          <text class='orange'> 当前余额：￥0.00</text>
+          <text class='orange'> 当前余额：￥{{money}}</text>
           <label>
               <radio value="5"></radio>
           </label>   
-        </view>
+        </view> 
       </view>
       <view class='member-list-con'>
         <view class='left'>

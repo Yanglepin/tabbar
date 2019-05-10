@@ -60,11 +60,17 @@ Page({
       method: 'POST', 
       success: function (res) { 
         console.log("个人资料" + JSON.stringify(res.data));
+        var img = res.data.user_headimg
+        img.substr(0, 1);
+        if (img.substr(0, 1)=="u"){
+          res.data.user_headimg = that.data.ImgUrl + res.data.user_headimg;
+        }
         that.setData({
           info: res.data,
-          img: res.data.user_headimg,
+          img: res.data.user_headimg, 
           nick_name: res.data.nick_name
         })
+        console.log(that.data.img); 
       }
     })
   },

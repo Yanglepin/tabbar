@@ -78,7 +78,7 @@
   color: #a0a0a0;
   text-align: right;
   border-radius: 8rpx;
-  margin-top:15rpx;
+  margin-top:35rpx;
   margin-left: 16%;
   padding-left: 20rpx;
   width: 80%;

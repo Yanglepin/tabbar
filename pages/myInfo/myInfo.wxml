@@ -11,12 +11,13 @@
        <icon class='tou'>
         <!-- <image src='{{ImgUrl}}{{img}}'></image> -->
          <image src="{{img == '' ?avatarUrl:img}}"></image> 
+          <!-- <image src="{{avatarUrl}}"></image>  -->
        </icon>
        <icon class='right-arrow'><image src='/icons/right-arrow.png'></image></icon>
       </view> 
     </view>
     <view class='info-list'>
-      <view class='name'>昵称</view> 
+      <view class='name'>昵称</view>  
       <view class='con'>
         <input type='text' value="{{info.nick_name==''?nickName:info.nick_name}}" placeholder='请输入昵称' bindinput='nameInput'/>
       </view>

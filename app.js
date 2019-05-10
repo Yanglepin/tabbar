@@ -29,10 +29,10 @@ App({
               }else{
                 var haderImg = that.globalData.userInfo.avatarUrl;
               }
-              console.log(that.globalData.userInfo); 
+              console.log(that.globalData.userInfo);  
               wx.request({ 
                 url: that.data.URL + 'index.php?s=/api/login/loginByOpenId',
-                method: 'POST', 
+                method: 'POST',  
                 data: {
                   openId: that.globalData.openId,
                   haderImg: haderImg

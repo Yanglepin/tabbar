@@ -137,7 +137,7 @@ Page({
       },
       method: 'POST',
       success: function (res) { 
-        console.log("获取扭蛋机列表" + JSON.stringify(res.data.data));
+        // console.log("获取扭蛋机列表" + JSON.stringify(res.data.data));
         that.setData({
           niudanji: that.data.niudanji.concat(res.data.data),
           page_count: res.data.page_count,
